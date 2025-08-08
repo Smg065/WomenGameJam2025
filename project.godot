@@ -11,17 +11,30 @@ config_version=5
 [application]
 
 config/name="WomenGameJam2025"
+config/description="Cherrybones
+Larissa Paes
+Meg
+Mila
+Florayiduo
+Smg065"
+config/version="0.0.0"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://Images/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 [file_customization]
 
 folder_colors={
 "res://Audio/": "teal",
 "res://Images/": "pink",
+"res://Modeling/": "green",
 "res://Resources/": "yellow",
 "res://Scenes/": "yellow",
-"res://Scripts/": "gray"
+"res://Scripts/": "gray",
+"res://Shaders/": "purple"
 }
 
 [rendering]
