@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2rvucsxs8qe3"]
+
+[ext_resource type="Script" path="res://Scripts/FirstPersonCharacter.gd" id="1_7jp34"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224653, 0.0935199, -7.8696)
+size = Vector3(20, 1, 20)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("mainCamera", "cuteCamera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_7jp34")
+mainCamera = NodePath("CollisionShape3D/RealCamera")
+cuteCamera = NodePath("../TextureRect/SubViewport/CuteCamera")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_afhwg")
+
+[node name="RealCamera" type="Camera3D" parent="CharacterBody3D/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+cull_mask = 1048573
+
+[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/CollisionShape3D/RealCamera"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+spot_range = 19.0
+spot_angle_attenuation = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="TextureRect"]
+
+[node name="CuteCamera" type="Camera3D" parent="TextureRect/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50478, 0)
+cull_mask = 1048573
