@@ -1,10 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2rvucsxs8qe3"]
+[gd_scene load_steps=9 format=3 uid="uid://d2rvucsxs8qe3"]
 
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_eyvy8"]
-[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Art/3D Assets/floor.glb" id="3_0h5wc"]
+[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Modeling/Models/floor.glb" id="3_0h5wc"]
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="3_e2cxc"]
 [ext_resource type="Texture2D" uid="uid://dihem0l4ddhcj" path="res://Modeling/Textures/OtherTexture.png" id="5_13vnn"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_55f7v"]
+vertices = PackedVector3Array(-7.56418, 1.03831, -3.81418, -1.56418, 1.03831, -3.81418, -1.31418, 1.03831, -4.31418, 0.18582, 1.03831, -12.5642, -7.56418, 1.03831, -12.5642, 0.18582, 1.03831, -4.31418, 1.43582, 1.03831, -4.31418, 1.68582, 1.03831, -3.81418, 7.68582, 1.03831, -3.81418, 7.68582, 1.03831, -12.5642, 0.18582, 1.03831, 2.68582, 0.18582, 1.03831, -1.06418, -1.56418, 1.03831, -1.31418, -7.56418, 1.03831, 2.68582, 1.68582, 1.03831, -1.31418, 7.68582, 1.03831, 2.68582, -0.56418, 3.03831, -3.31418, -0.56418, 3.03831, -2.06418, 0.68582, 3.03831, -2.06418, 0.68582, 3.03831, -3.31418, -0.31418, 1.03831, -3.06418, -0.31418, 1.03831, -2.31418, 0.43582, 1.03831, -2.31418, 0.43582, 1.03831, -3.06418)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 3), PackedInt32Array(6, 5, 3), PackedInt32Array(12, 11, 10), PackedInt32Array(0, 1, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 0), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 7, 8), PackedInt32Array(10, 14, 15), PackedInt32Array(15, 14, 8), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21)]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1ocib"]
 render_priority = 0
@@ -22,26 +26,40 @@ size = Vector3(15, 1, 15)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_55f7v")
 
-[node name="floor" parent="." instance=ExtResource("3_0h5wc")]
+[node name="floor" parent="NavigationRegion3D" instance=ExtResource("3_0h5wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="Plane" parent="floor" index="0"]
+[node name="Plane" parent="NavigationRegion3D/floor" index="0"]
 transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
 layers = 4
 material_overlay = SubResource("ShaderMaterial_1ocib")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/floor"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_xye7u")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.53831, 2.30627)
+use_collision = true
+size = Vector3(2, 2, 2)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 3, 0)
 light_energy = 0.1
 
 [node name="NPC" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_e2cxc")]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 player = NodePath("../CharacterBody3D")
 
-[editable path="floor"]
+[editable path="NavigationRegion3D/floor"]
