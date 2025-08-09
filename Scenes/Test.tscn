@@ -1,48 +1,47 @@
-[gd_scene load_steps=3 format=3 uid="uid://d2rvucsxs8qe3"]
+[gd_scene load_steps=8 format=3 uid="uid://d2rvucsxs8qe3"]
 
-[ext_resource type="Script" path="res://Scripts/FirstPersonCharacter.gd" id="1_7jp34"]
+[ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
+[ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_eyvy8"]
+[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Art/3D Assets/floor.glb" id="3_0h5wc"]
+[ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="3_e2cxc"]
+[ext_resource type="Texture2D" uid="uid://dihem0l4ddhcj" path="res://Modeling/Textures/OtherTexture.png" id="5_13vnn"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ocib"]
+render_priority = 0
+shader = ExtResource("2_eyvy8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/is_sprite = null
+shader_parameter/inverse_lighting = false
+shader_parameter/light_min_max = Vector2(0, 0.6)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("5_13vnn")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xye7u"]
+size = Vector3(15, 1, 15)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224653, 0.0935199, -7.8696)
-size = Vector3(20, 1, 20)
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="floor" parent="." instance=ExtResource("3_0h5wc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("mainCamera", "cuteCamera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
-script = ExtResource("1_7jp34")
-mainCamera = NodePath("CollisionShape3D/RealCamera")
-cuteCamera = NodePath("../TextureRect/SubViewport/CuteCamera")
+[node name="Plane" parent="floor" index="0"]
+transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
+layers = 4
+material_overlay = SubResource("ShaderMaterial_1ocib")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-shape = SubResource("CapsuleShape3D_afhwg")
+[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
 
-[node name="RealCamera" type="Camera3D" parent="CharacterBody3D/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-cull_mask = 1048573
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+shape = SubResource("BoxShape3D_xye7u")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="CharacterBody3D/CollisionShape3D/RealCamera"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-spot_range = 19.0
-spot_angle_attenuation = 0.5
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 3, 0)
+light_energy = 0.1
 
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="NPC" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_e2cxc")]
+player = NodePath("../CharacterBody3D")
 
-[node name="SubViewport" type="SubViewport" parent="TextureRect"]
-
-[node name="CuteCamera" type="Camera3D" parent="TextureRect/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50478, 0)
-visible = false
-cull_mask = 1048573
+[editable path="floor"]

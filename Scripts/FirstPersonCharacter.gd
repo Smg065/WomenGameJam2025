@@ -5,9 +5,6 @@ class_name Player
 @export var cuteCamera : Camera3D
 @export var mouseSensitivity : float = .005
 
-func _ready() -> void:
-	sync_cameras()
-
 func _process(delta: float) -> void:
 	var inputVector : Vector2 = get_move_vector()
 	var relativeMove : Vector3 = global_transform.basis.z * inputVector.y
@@ -20,11 +17,13 @@ func _process(delta: float) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	move_camera(-Input.get_vector("CameraLeft","CameraRight","CameraUp","CameraDown") * Vector2(10,7))
+	sync_cameras()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
-		clamp(mainCamera.rotation_degrees.x, -120, 120)
-		move_camera(-event.relative)
+		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			clamp(mainCamera.rotation_degrees.x, -120, 120)
+			move_camera(-event.relative)
 
 func get_move_vector() -> Vector2:
 	var inputVector : Vector2
@@ -37,5 +36,5 @@ func move_camera(cameraInput : Vector2) -> void:
 	mainCamera.rotate_x(cameraInput.y * mouseSensitivity)
 
 func sync_cameras():
-	cuteCamera.position = mainCamera.position
-	cuteCamera.rotation = mainCamera.rotation
+	cuteCamera.global_position = mainCamera.global_position
+	cuteCamera.global_rotation = mainCamera.global_rotation
