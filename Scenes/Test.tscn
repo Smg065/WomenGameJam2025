@@ -10,6 +10,9 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.224653, 0.0935199, -7.8696)
 size = Vector3(20, 1, 20)
 
+[node name="CSGSphere3D" type="CSGSphere3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." node_paths=PackedStringArray("mainCamera", "cuteCamera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_7jp34")
@@ -29,14 +32,17 @@ spot_range = 19.0
 spot_angle_attenuation = 0.5
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="SubViewport" type="SubViewport" parent="TextureRect"]
 
 [node name="CuteCamera" type="Camera3D" parent="TextureRect/SubViewport"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50478, 0)
+visible = false
 cull_mask = 1048573
