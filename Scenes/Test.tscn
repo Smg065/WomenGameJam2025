@@ -1,25 +1,25 @@
 [gd_scene load_steps=9 format=3 uid="uid://d2rvucsxs8qe3"]
 
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
+[ext_resource type="Script" path="res://Scripts/Flashlight.gd" id="1_oolp0"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_eyvy8"]
 [ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Modeling/Models/floor.glb" id="3_0h5wc"]
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="3_e2cxc"]
-[ext_resource type="Texture2D" uid="uid://b8dhfiydatob8" path="res://Modeling/Props/floor_cute/floor_cute_0.png" id="3_jvimx"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_55f7v"]
 vertices = PackedVector3Array(-7.56418, 1.09814, -3.81418, -1.56418, 1.09814, -3.81418, -1.31418, 1.09814, -4.31418, 0.18582, 1.09814, -12.5642, -7.56418, 1.09814, -12.5642, 0.18582, 1.09814, -4.31418, 1.43582, 1.09814, -4.31418, 1.68582, 1.09814, -3.81418, 7.68582, 1.09814, -3.81418, 7.68582, 1.09814, -12.5642, 0.18582, 1.09814, 2.68582, 0.18582, 1.09814, -1.06418, -1.56418, 1.09814, -1.31418, -7.56418, 1.09814, 2.68582, 1.68582, 1.09814, -1.31418, 7.68582, 1.09814, 2.68582, -0.56418, 3.59814, -3.31418, -0.56418, 3.59814, -2.06418, 0.68582, 3.59814, -2.06418, 0.68582, 3.59814, -3.31418, -0.31418, 1.09814, -3.06418, -0.31418, 1.09814, -2.31418, 0.43582, 1.09814, -2.31418, 0.43582, 1.09814, -3.06418)
 polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 3), PackedInt32Array(3, 5, 2), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 9), PackedInt32Array(9, 6, 3), PackedInt32Array(6, 5, 3), PackedInt32Array(12, 11, 10), PackedInt32Array(0, 1, 12), PackedInt32Array(10, 13, 12), PackedInt32Array(12, 13, 0), PackedInt32Array(10, 11, 14), PackedInt32Array(14, 7, 8), PackedInt32Array(10, 14, 15), PackedInt32Array(15, 14, 8), PackedInt32Array(19, 18, 16), PackedInt32Array(16, 18, 17), PackedInt32Array(23, 22, 20), PackedInt32Array(20, 22, 21)]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ocib"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vidxs"]
 render_priority = 0
 shader = ExtResource("2_eyvy8")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/is_sprite = null
-shader_parameter/inverse_lighting = false
-shader_parameter/light_min_max = Vector2(0, 0.6)
+shader_parameter/inverse_lighting = null
+shader_parameter/light_min_max = null
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("3_jvimx")
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xye7u"]
 size = Vector3(15, 1, 15)
@@ -29,23 +29,35 @@ size = Vector3(15, 1, 15)
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_55f7v")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+
+[node name="Flashlight" type="CSGCylinder3D" parent="NavigationRegion3D/CSGBox3D" node_paths=PackedStringArray("playerSource")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0.6, -1.80627)
+operation = 2
+flip_faces = true
+radius = 5.0
+height = 9.0
+sides = 32
+cone = true
+script = ExtResource("1_oolp0")
+playerSource = NodePath("../../../CharacterBody3D")
+localOffset = Vector3(0, 0, -4.5)
+
 [node name="floor" parent="NavigationRegion3D" instance=ExtResource("3_0h5wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
 [node name="Plane" parent="NavigationRegion3D/floor" index="0"]
 transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
 layers = 4
-material_overlay = SubResource("ShaderMaterial_1ocib")
+material_overlay = SubResource("ShaderMaterial_vidxs")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/floor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_xye7u")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/floor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, 2.30627)
-use_collision = true
-size = Vector3(2, 2.61572, 2)
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
 

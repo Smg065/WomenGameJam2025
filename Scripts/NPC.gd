@@ -30,7 +30,7 @@ func can_see_npc() -> bool:
 	var inlightPercent : float = camForward.dot(directLine)
 	var lightDistance : float = player.global_position.distance_to(global_position)
 	var ligtDistPercent : float = (player.lightLength - lightDistance + lightBuffer) / player.lightLength
-	return inlightPercent * ligtDistPercent > .2
+	return inlightPercent > .75
 
 func ray_is_blocked(in_ray : RayCast3D) -> bool:
 	in_ray.target_position = in_ray.to_local(player.mainCamera.global_position)

@@ -1,19 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://hlx74e2npk7b"]
+[gd_scene load_steps=3 format=3 uid="uid://hlx74e2npk7b"]
 
 [ext_resource type="Script" path="res://Scripts/FirstPersonCharacter.gd" id="1_xjw2c"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8cvjj"]
-viewport_path = NodePath("TextureRect/SubViewport")
-
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera", "cuteCamera")]
+[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_xjw2c")
 mainCamera = NodePath("CollisionShape3D/RealCamera")
-cuteCamera = NodePath("TextureRect/SubViewport/CuteCamera")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_afhwg")
@@ -25,22 +21,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 layers = 7
 spot_range = 10.0
 spot_attenuation = -0.25
-
-[node name="TextureRect" type="TextureRect" parent="."]
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("ViewportTexture_8cvjj")
-
-[node name="SubViewport" type="SubViewport" parent="TextureRect"]
-transparent_bg = true
-size = Vector2i(1280, 720)
-
-[node name="CuteCamera" type="Camera3D" parent="TextureRect/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50478, 0)
-visible = false
-cull_mask = 1048570

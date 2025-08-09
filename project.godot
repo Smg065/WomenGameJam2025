@@ -17,7 +17,7 @@ Meg
 Mila
 Florayiduo
 Smg065"
-config/version="0.0.0"
+config/version="0.0.1"
 run/main_scene="res://Scenes/Test.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Images/icon.svg"
@@ -104,8 +104,3 @@ CameraRight={
 3d_render/layer_3="Scary World"
 3d_physics/layer_1="Enviroments"
 3d_physics/layer_2="Characters"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"

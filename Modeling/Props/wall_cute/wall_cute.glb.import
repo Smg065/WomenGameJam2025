@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b37tlo7r78wmt"
-path="res://.godot/imported/floor.glb-1a76b8f8583fc8526394bb85375ab153.scn"
+uid="uid://b2y40ch3aq7ni"
+path="res://.godot/imported/wall_cute.glb-c39995b13fa5be6d4c0f13fcd885b75a.scn"
 
 [deps]
 
-source_file="res://Modeling/Models/floor.glb"
-dest_files=["res://.godot/imported/floor.glb-1a76b8f8583fc8526394bb85375ab153.scn"]
+source_file="res://Modeling/Props/wall_cute/wall_cute.glb"
+dest_files=["res://.godot/imported/wall_cute.glb-c39995b13fa5be6d4c0f13fcd885b75a.scn"]
 
 [params]
 
@@ -31,13 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"Material.001.1001": {
-"use_external/enabled": true,
-"use_external/path": "res://Modeling/Materials/Material.001.1001.tres"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

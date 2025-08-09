@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_4u7gq"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_foh23"]
-[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="3_jrhtd"]
+[ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="3_5h6y4"]
 [ext_resource type="PackedScene" uid="uid://bj5mymh0k6ya" path="res://Modeling/Characters/Monsters/Donut_Good_V01.glb" id="4_qiced"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oss53"]
@@ -11,17 +11,19 @@
 render_priority = 0
 shader = ExtResource("2_foh23")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.1
 shader_parameter/is_sprite = true
 shader_parameter/inverse_lighting = null
 shader_parameter/light_min_max = Vector2(0, 0.6)
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("3_jrhtd")
+shader_parameter/texture_albedo = ExtResource("3_5h6y4")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jk7mm"]
 render_priority = 0
 shader = ExtResource("2_foh23")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/is_sprite = null
 shader_parameter/inverse_lighting = true
 shader_parameter/light_min_max = Vector2(0, 0.6)
@@ -32,6 +34,7 @@ shader_parameter/uv1_offset = null
 render_priority = 0
 shader = ExtResource("2_foh23")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/is_sprite = null
 shader_parameter/inverse_lighting = true
 shader_parameter/light_min_max = Vector2(0, 0.6)
@@ -53,10 +56,10 @@ shape = SubResource("CapsuleShape3D_oss53")
 [node name="Cute" type="Sprite3D" parent="."]
 layers = 2
 material_override = SubResource("ShaderMaterial_h5ws5")
-pixel_size = 0.002
+pixel_size = 0.006
 billboard = 2
 shaded = true
-texture = ExtResource("3_jrhtd")
+texture = ExtResource("3_5h6y4")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 

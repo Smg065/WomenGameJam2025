@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b40eakpjivgbs"]
+
+[ext_resource type="Texture2D" uid="uid://db07mcxxi7qqf" path="res://Modeling/Models/floor_floor_lambert1_BaseColor.png" id="1_figgg"]
+
+[resource]
+resource_name = "Material.001.1001"
+albedo_texture = ExtResource("1_figgg")
+roughness = 0.5
