@@ -1,0 +1,67 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2rvucsxs8qe3"]
+
+[ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
+[ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_eyvy8"]
+[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="2_f0400"]
+[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Art/3D Assets/floor.glb" id="3_0h5wc"]
+[ext_resource type="Script" path="res://Scripts/NPC.gd" id="5_f0ehs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oss53"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5ws5"]
+render_priority = 0
+shader = ExtResource("2_eyvy8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/is_sprite = true
+shader_parameter/inverse_lighting = null
+shader_parameter/light_min_max = Vector2(0, 0.6)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/texture_albedo = ExtResource("2_f0400")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_am4rq"]
+render_priority = 0
+shader = ExtResource("2_eyvy8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/is_sprite = null
+shader_parameter/inverse_lighting = true
+shader_parameter/light_min_max = Vector2(0, 0.4)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
+
+[node name="floor" parent="." instance=ExtResource("3_0h5wc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Plane" parent="floor" index="0"]
+transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 3, 0)
+light_energy = 0.1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CapsuleShape3D_oss53")
+
+[node name="Cute" type="Sprite3D" parent="StaticBody3D"]
+layers = 2
+material_override = SubResource("ShaderMaterial_h5ws5")
+pixel_size = 0.002
+billboard = 2
+shaded = true
+texture = ExtResource("2_f0400")
+script = ExtResource("5_f0ehs")
+
+[node name="Spooky" type="CSGCylinder3D" parent="StaticBody3D/Cute"]
+layers = 4
+material = SubResource("ShaderMaterial_am4rq")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="StaticBody3D"]
+
+[editable path="floor"]

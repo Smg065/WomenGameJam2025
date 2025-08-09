@@ -26,10 +26,16 @@ config/icon="res://Images/icon.svg"
 
 buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
 [file_customization]
 
 folder_colors={
 "res://Audio/": "teal",
+"res://Fonts/": "red",
 "res://Images/": "pink",
 "res://Modeling/": "green",
 "res://Resources/": "yellow",
@@ -90,6 +96,12 @@ CameraRight={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+
+[layer_names]
+
+3d_render/layer_1="Shared Elements"
+3d_render/layer_2="Cute World"
+3d_render/layer_3="Scary World"
 
 [rendering]
 
