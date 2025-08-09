@@ -5,6 +5,8 @@ class_name Player
 @export var cuteCamera : Camera3D
 @export var mouseSensitivity : float = .005
 
+@export var lightLength : float = 9
+
 func _process(delta: float) -> void:
 	var inputVector : Vector2 = get_move_vector()
 	var relativeMove : Vector3 = global_transform.basis.z * inputVector.y
