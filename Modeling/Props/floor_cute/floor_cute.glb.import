@@ -3,12 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://rtfl40yey8yi"
-valid=false
+uid="uid://pci7btkv6aat"
+path="res://.godot/imported/floor_cute.glb-2debb534e75e88c1a871043988949dfd.scn"
 
 [deps]
 
-source_file="res://Modeling/Characters/Monsters/Donut_Good_V01.gltf"
+source_file="res://Modeling/Props/floor_cute/floor_cute.glb"
+dest_files=["res://.godot/imported/floor_cute.glb-2debb534e75e88c1a871043988949dfd.scn"]
 
 [params]
 
