@@ -1,74 +1,93 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://d1dv5ooo2dyse"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://d1dv5ooo2dyse"]
 
-[ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_oydll"]
-[ext_resource type="Script" path="res://Scripts/LineResource.gd" id="2_bqu88"]
-[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="2_oi16m"]
+[ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_w3o2h"]
+[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="2_4yemr"]
+[ext_resource type="Script" path="res://Scripts/LineResource.gd" id="3_qcp8r"]
+[ext_resource type="Texture2D" uid="uid://cs2hyxt0sjfo4" path="res://Images/Sprites/wgj_chara_2.png" id="4_rxtmy"]
+[ext_resource type="AudioStream" uid="uid://dnd4txlu7gq76" path="res://Audio/SFX/Dialogue/CharacterDialogue(4).wav" id="5_1ee0e"]
+[ext_resource type="AudioStream" uid="uid://b2uk63r872jox" path="res://Audio/SFX/Dialogue/CharacterDialogue(3).wav" id="6_citw8"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="7_v13s5"]
 
 [sub_resource type="Resource" id="Resource_shwqw"]
-script = ExtResource("2_bqu88")
+script = ExtResource("3_qcp8r")
 textEn = "There are monsters in the bakery."
 textEs = "Hay monstruos en la panaderia."
 nextLineIndex = 1
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_6dw0v"]
-script = ExtResource("1_oydll")
+script = ExtResource("1_w3o2h")
 mainLine = SubResource("Resource_shwqw")
 character = 2
-optionsLines = Array[ExtResource("2_bqu88")]([])
+characterSprite = ExtResource("2_4yemr")
+reactionSprite = ExtResource("4_rxtmy")
+sound = ExtResource("5_1ee0e")
+optionsLines = Array[ExtResource("3_qcp8r")]([])
 
 [sub_resource type="Resource" id="Resource_vv5pr"]
-script = ExtResource("2_bqu88")
+script = ExtResource("3_qcp8r")
 textEn = "Again?"
 textEs = "¿Otra vez?"
 nextLineIndex = 2
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_cgswc"]
-script = ExtResource("1_oydll")
+script = ExtResource("1_w3o2h")
 mainLine = SubResource("Resource_vv5pr")
 character = 0
-optionsLines = Array[ExtResource("2_bqu88")]([])
+characterSprite = ExtResource("2_4yemr")
+reactionSprite = ExtResource("4_rxtmy")
+sound = ExtResource("6_citw8")
+optionsLines = Array[ExtResource("3_qcp8r")]([])
 
 [sub_resource type="Resource" id="Resource_j3vf1"]
-script = ExtResource("2_bqu88")
+script = ExtResource("3_qcp8r")
 textEn = "Yes, could you deal with them?"
 textEs = "Si, ¿Podes encargarte de ellos?"
-nextLineIndex = 0
+nextLineIndex = 3
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_dy3i6"]
-script = ExtResource("1_oydll")
+script = ExtResource("1_w3o2h")
 mainLine = SubResource("Resource_j3vf1")
 character = 2
-optionsLines = Array[ExtResource("2_bqu88")]([])
+characterSprite = ExtResource("2_4yemr")
+reactionSprite = ExtResource("4_rxtmy")
+sound = ExtResource("5_1ee0e")
+optionsLines = Array[ExtResource("3_qcp8r")]([])
 
 [sub_resource type="Resource" id="Resource_el2je"]
-script = ExtResource("2_bqu88")
+script = ExtResource("3_qcp8r")
 textEn = "Not like I have a choice."
 textEs = "No es como que tuviera otra opcion"
-nextLineIndex = 0
+nextLineIndex = 4
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_a1eeu"]
-script = ExtResource("1_oydll")
+script = ExtResource("1_w3o2h")
 mainLine = SubResource("Resource_el2je")
 character = 0
-optionsLines = Array[ExtResource("2_bqu88")]([])
+characterSprite = ExtResource("2_4yemr")
+reactionSprite = ExtResource("4_rxtmy")
+sound = ExtResource("6_citw8")
+optionsLines = Array[ExtResource("3_qcp8r")]([])
 
 [sub_resource type="Resource" id="Resource_31jni"]
-script = ExtResource("2_bqu88")
+script = ExtResource("3_qcp8r")
 textEn = "Thank you...."
 textEs = "Gracias....."
-nextLineIndex = 0
+nextLineIndex = 5
 exitDialogue = true
 
 [sub_resource type="Resource" id="Resource_3mqr6"]
-script = ExtResource("1_oydll")
+script = ExtResource("1_w3o2h")
 mainLine = SubResource("Resource_31jni")
 character = 2
-optionsLines = Array[ExtResource("2_bqu88")]([])
+characterSprite = ExtResource("2_4yemr")
+reactionSprite = ExtResource("4_rxtmy")
+sound = ExtResource("5_1ee0e")
+optionsLines = Array[ExtResource("3_qcp8r")]([])
 
 [resource]
-script = ExtResource("2_oi16m")
-allLines = Array[ExtResource("1_oydll")]([SubResource("Resource_6dw0v"), SubResource("Resource_cgswc"), SubResource("Resource_dy3i6"), SubResource("Resource_a1eeu"), SubResource("Resource_3mqr6")])
+script = ExtResource("7_v13s5")
+allLines = Array[ExtResource("1_w3o2h")]([SubResource("Resource_6dw0v"), SubResource("Resource_cgswc"), SubResource("Resource_dy3i6"), SubResource("Resource_a1eeu"), SubResource("Resource_3mqr6")])
