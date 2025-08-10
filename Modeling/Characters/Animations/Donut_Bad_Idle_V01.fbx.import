@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://f1il1c2t4wws"
-path="res://.godot/imported/Donut_Good_V01.glb-82320dd1f78fa6e5959ee9de440f125a.scn"
+uid="uid://c1hdju5yf3mrr"
+path="res://.godot/imported/Donut_Bad_Idle_V01.fbx-b50c21b1184b4ed2398ebf3c784c351c.scn"
 
 [deps]
 
-source_file="res://Modeling/Characters/Monsters/Donut_Good_V01.glb"
-dest_files=["res://.godot/imported/Donut_Good_V01.glb-82320dd1f78fa6e5959ee9de440f125a.scn"]
+source_file="res://Modeling/Characters/Animations/Donut_Bad_Idle_V01.fbx"
+dest_files=["res://.godot/imported/Donut_Bad_Idle_V01.fbx-b50c21b1184b4ed2398ebf3c784c351c.scn"]
 
 [params]
 
@@ -27,10 +27,11 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=0
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
