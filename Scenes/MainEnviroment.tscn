@@ -8,7 +8,7 @@
 layers = 2
 use_collision = true
 
-[node name="FlashlightErodeHorror" type="CSGCylinder3D" parent="CuteCSG" node_paths=PackedStringArray("playerSource")]
+[node name="FlashlightErodeHorror" type="CSGCylinder3D" parent="CuteCSG" groups=["Flashlight"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.506, -4.5)
 operation = 2
 radius = 5.0
@@ -16,14 +16,13 @@ height = 9.0
 sides = 32
 cone = true
 script = ExtResource("1_c2nwg")
-playerSource = NodePath("")
 localOffset = Vector3(0, 0, -4.5)
 
 [node name="HorrorCSG" type="CSGCombiner3D" parent="."]
 layers = 4
 use_collision = true
 
-[node name="FlashlightCreateJoy" type="CSGCylinder3D" parent="HorrorCSG" node_paths=PackedStringArray("playerSource")]
+[node name="FlashlightCreateJoy" type="CSGCylinder3D" parent="HorrorCSG" groups=["Flashlight"]]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.506, -4.5)
 operation = 1
 radius = 5.0
@@ -31,7 +30,6 @@ height = 9.0
 sides = 32
 cone = true
 script = ExtResource("1_c2nwg")
-playerSource = NodePath("")
 localOffset = Vector3(0, 0, -4.5)
 
 [node name="VisualShiftsOnly" type="Node3D" parent="."]

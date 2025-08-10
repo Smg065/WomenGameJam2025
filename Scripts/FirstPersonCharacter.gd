@@ -5,7 +5,13 @@ class_name Player
 @export var cuteCamera : Camera3D
 @export var mouseSensitivity : float = .005
 
+@export var cuteLightVis : Array[NodePath]
+
 @export var lightLength : float = 9
+
+func _ready() -> void:
+	for eachNode in get_tree().get_nodes_in_group("Flashlight"):
+		cuteLightVis.append(eachNode.get_path())
 
 func _process(delta: float) -> void:
 	var inputVector : Vector2 = get_move_vector()
@@ -20,6 +26,9 @@ func _process(delta: float) -> void:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	move_camera(-Input.get_vector("CameraLeft","CameraRight","CameraUp","CameraDown") * Vector2(10,7))
 	sync_cams()
+	if Input.is_action_just_pressed("ToggleFlashlight"):
+		for eachItem in cuteLightVis:
+			get_node(eachItem).visible = !get_node(eachItem).visible
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
