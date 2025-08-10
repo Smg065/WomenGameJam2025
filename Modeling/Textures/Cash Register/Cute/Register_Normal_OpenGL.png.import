@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co43fcpujncfc"
-path.s3tc="res://.godot/imported/Cakes_Height.png-9f3a92e007d16696f4310299c6725861.s3tc.ctex"
+uid="uid://x3tqrc6mal65"
+path.s3tc="res://.godot/imported/Register_Normal_OpenGL.png-79aabf8cbc221138277d1607d9325c76.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Modeling/Textures/Foods/Cute Cakes and coffee/Cakes_Height.png"
-dest_files=["res://.godot/imported/Cakes_Height.png-9f3a92e007d16696f4310299c6725861.s3tc.ctex"]
+source_file="res://Modeling/Textures/Cash Register/Cute/Register_Normal_OpenGL.png"
+dest_files=["res://.godot/imported/Register_Normal_OpenGL.png-79aabf8cbc221138277d1607d9325c76.s3tc.ctex"]
 
 [params]
 
@@ -20,11 +20,11 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=7
+roughness/mode=1
 roughness/src_normal="res://Modeling/Textures/Cash Register/Cute/Register_Normal_OpenGL.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
