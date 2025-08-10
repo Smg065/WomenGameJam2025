@@ -66,6 +66,9 @@ convoUI = NodePath("PlayerUI/NVUI")
 [node name="CharacterHitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_afhwg")
 
+[node name="AudioListener3D" type="AudioListener3D" parent="CharacterHitbox"]
+current = true
+
 [node name="RealCamera" type="Camera3D" parent="CharacterHitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 cull_mask = 1048573

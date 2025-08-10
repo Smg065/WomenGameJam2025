@@ -20,11 +20,15 @@ Smg065"
 config/version="0.0.1"
 run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
-config/icon="res://Images/icon.svg"
+config/icon="res://Images/UI/flashlight.png"
 
 [audio]
 
 buses/default_bus_layout="res://Audio/default_bus_layout.tres"
+
+[autoload]
+
+SaveData="*res://Scripts/Save.gd"
 
 [display]
 

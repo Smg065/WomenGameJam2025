@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" load_steps=4 format=3 uid="uid://bonrmj3av0uo6"]
 
-[ext_resource type="Texture2D" uid="uid://2kahmx61fk6c" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Cakes_Base_Terror.png" id="1_8ko2l"]
-[ext_resource type="Texture2D" uid="uid://bbdp6fih01fxr" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Cakes_Height.png" id="2_4vkpy"]
-[ext_resource type="Texture2D" uid="uid://cd6miskac85hh" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Cakes_Normal_OpenGL.png" id="3_uade2"]
+[ext_resource type="Texture2D" uid="uid://btctova7468oi" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Terror_Cakes_Base_color.png" id="1_8ko2l"]
+[ext_resource type="Texture2D" uid="uid://cjrvxe4fuv8vi" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Terror_Cakes_Height.png" id="2_4vkpy"]
+[ext_resource type="Texture2D" uid="uid://tini3t55c73e" path="res://Modeling/Textures/Foods/Terror Cakes and Coffee/Terror_Cakes_Normal_OpenGL.png" id="3_uade2"]
 
 [resource]
 albedo_texture = ExtResource("1_8ko2l")
