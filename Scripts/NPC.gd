@@ -71,7 +71,6 @@ func chase_logic(delta: float) -> void:
 			break
 		distToTravel -= distThisPath
 	var distance_left = navInfo.target_position.distance_to(global_position)
-	print(distance_left)
 	if distance_left < 1:
 		game_over()
 
