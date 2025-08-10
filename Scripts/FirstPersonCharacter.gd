@@ -4,8 +4,6 @@ class_name Player
 @export_category("Explore")
 @export var mainCamera : Camera3D
 @export var cuteCamera : Camera3D
-@export var mouseSensitivity : float = .005
-
 @export var cuteLightVis : Array[NodePath]
 var cuteCSG : CSGCombiner3D
 
@@ -82,8 +80,8 @@ func get_move_vector() -> Vector2:
 	return inputVector.normalized()
 
 func move_camera(cameraInput : Vector2) -> void:
-	rotate_y(cameraInput.x * mouseSensitivity)
-	mainCamera.rotate_x(cameraInput.y * mouseSensitivity)
+	rotate_y(cameraInput.x * SaveData.mouseSensitivity)
+	mainCamera.rotate_x(cameraInput.y * SaveData.mouseSensitivity)
 
 func sync_cams():
 	cuteCamera.global_position = mainCamera.global_position

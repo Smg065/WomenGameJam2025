@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://7n6g37y3qqt8"]
+
+[ext_resource type="PackedScene" uid="uid://c3px4bbjocfat" path="res://Modeling/Props/Outside_envir/outside_cute/BakeryName.glb" id="1_jw7wt"]
+[ext_resource type="PackedScene" uid="uid://gglghmd30nl4" path="res://Modeling/Props/Outside_envir/outside_horror/bakeryName_horror.glb" id="2_npqic"]
+
+[node name="BakeryName" type="Node3D"]
+
+[node name="BakeryName" parent="." instance=ExtResource("1_jw7wt")]
+
+[node name="bakeryName_horror" parent="." instance=ExtResource("2_npqic")]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3ybledrijy82"]
+
+[ext_resource type="PackedScene" uid="uid://c2be8swp6q60r" path="res://Modeling/Props/floor_and_wall/wall_cute.glb" id="1_lwh3o"]
+[ext_resource type="PackedScene" uid="uid://cjscu2wfcxwmg" path="res://Modeling/Props/floor_and_wall/wall_horror.glb" id="2_a80ga"]
+
+[node name="InsideWall" type="Node3D"]
+
+[node name="wall_cute" parent="." instance=ExtResource("1_lwh3o")]
+
+[node name="wall_horror" parent="." instance=ExtResource("2_a80ga")]
+transform = Transform3D(0.432797, 0, 0, 0, 0.549587, 0, 0, 0, 0.55901, -0.143494, 0, -0.03389)

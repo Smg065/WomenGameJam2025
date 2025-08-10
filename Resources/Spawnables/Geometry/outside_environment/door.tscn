@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ygarwkq4mioi"]
+
+[ext_resource type="PackedScene" uid="uid://dmpf12hie3kt1" path="res://Modeling/Props/Outside_envir/outside_cute/door.glb" id="1_edixw"]
+[ext_resource type="PackedScene" uid="uid://bk658v0dw07d0" path="res://Modeling/Props/Outside_envir/outside_horror/door_horror.glb" id="2_hkjjt"]
+
+[node name="Door" type="Node3D"]
+
+[node name="door" parent="." instance=ExtResource("1_edixw")]
+
+[node name="door_horror" parent="." instance=ExtResource("2_hkjjt")]

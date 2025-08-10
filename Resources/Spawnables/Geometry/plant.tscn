@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1r2ymbxxnj65"]
+
+[ext_resource type="PackedScene" uid="uid://otoj26kwenbf" path="res://Modeling/Props/plants/plant_cute.glb" id="1_m8yy8"]
+[ext_resource type="PackedScene" uid="uid://d1aelf8ehmyq5" path="res://Modeling/Props/plants/plant_horror.glb" id="2_0b58k"]
+
+[node name="Plant" type="Node3D"]
+
+[node name="plant_cute" parent="." instance=ExtResource("1_m8yy8")]
+
+[node name="plant_horror" parent="." instance=ExtResource("2_0b58k")]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://7rl2nlj37spi"]
+
+[ext_resource type="PackedScene" uid="uid://b5itym0slda1" path="res://Modeling/Props/Outside_envir/outside_cute/wall.glb" id="1_cp148"]
+[ext_resource type="PackedScene" uid="uid://dbylsimnv5u0b" path="res://Modeling/Props/Outside_envir/outside_horror/wall_horror.glb" id="2_ii0m0"]
+
+[node name="WallPink" type="Node3D"]
+
+[node name="wall" parent="." instance=ExtResource("1_cp148")]
+
+[node name="wall_horror" parent="." instance=ExtResource("2_ii0m0")]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://boxs7jca05hj4"]
+
+[ext_resource type="PackedScene" uid="uid://dt667s3rj43fn" path="res://Modeling/Props/floor_and_wall/floor_cute.glb" id="1_yb0dg"]
+[ext_resource type="PackedScene" uid="uid://4iqnxdwj5utm" path="res://Modeling/Props/floor_and_wall/floor_horror.glb" id="2_86mmc"]
+
+[node name="InsideFloor" type="Node3D"]
+
+[node name="floor_cute" parent="." instance=ExtResource("1_yb0dg")]
+transform = Transform3D(0.982458, 0, 0, 0, 1, 0, 0, 0, 0.982462, 0, 0, 0)
+
+[node name="floor_horror" parent="." instance=ExtResource("2_86mmc")]

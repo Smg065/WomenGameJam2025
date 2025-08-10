@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn36o8rglq4gi"]
+
+[ext_resource type="PackedScene" uid="uid://c7sydvwykod3m" path="res://Modeling/Props/Outside_envir/outside_horror/windowsFrame_horror.glb" id="1_0h2iv"]
+[ext_resource type="PackedScene" uid="uid://bauxdw775dfhx" path="res://Modeling/Props/Outside_envir/outside_cute/windowsFrame.glb" id="2_mah7w"]
+
+[node name="WindowsFrame" type="Node3D"]
+
+[node name="windowsFrame_horror" parent="." instance=ExtResource("1_0h2iv")]
+
+[node name="windowsFrame2" parent="." instance=ExtResource("2_mah7w")]
