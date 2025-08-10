@@ -7,15 +7,15 @@
 [ext_resource type="Material" uid="uid://b40eakpjivgbs" path="res://Modeling/Materials/Material.001.1001.tres" id="3_rkhp6"]
 [ext_resource type="Texture2D" uid="uid://cpig15chcpp7k" path="res://Modeling/Textures/floor/floor_cute_BaseColor_1001.png" id="4_gegtd"]
 [ext_resource type="Texture2D" uid="uid://n0k0g45k233b" path="res://Modeling/Textures/floor/floor_cute_Normal_1001.png" id="5_pkmj7"]
+[ext_resource type="AudioStream" uid="uid://304opmtx7trj" path="res://Audio/SFX/CuteSound(3).wav" id="9_2hs14"]
 [ext_resource type="Script" path="res://Scripts/MultitrackSound.gd" id="9_77o5p"]
-[ext_resource type="AudioStream" uid="uid://5urpo3k1huoj" path="res://Audio/SFX/CuteSound(2).wav" id="10_5empu"]
 [ext_resource type="AudioStream" uid="uid://fekqdthefrho" path="res://Audio/SFX/MonsterSound(1).wav" id="11_i4pp1"]
 [ext_resource type="PackedScene" uid="uid://dn8dpi3qvw8kn" path="res://Resources/Spawnables/Donut.tscn" id="12_fe6lf"]
 [ext_resource type="Script" path="res://Scripts/AudioPair.gd" id="12_h8n1e"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_55f7v"]
-vertices = PackedVector3Array(-7.56418, 1.09814, -2.81418, -6.56418, 1.09814, -2.81418, -6.31418, 1.09814, -4.31418, -7.56418, 1.09814, -12.5642, -3.56418, 1.09814, -4.31418, -3.31418, 1.09814, -2.81418, -1.56418, 1.09814, -2.81418, -1.31418, 1.09814, -4.31418, 1.93582, 1.09814, -12.5642, 1.68582, 1.09814, -4.06418, 1.68582, 1.09814, -2.81418, 4.43582, 1.09814, -2.81418, 4.68582, 1.09814, -4.31418, 7.68582, 1.09814, -4.06418, 7.68582, 1.09814, -12.5642, -5.56418, 3.59814, -3.31418, -5.56418, 3.59814, -2.06418, -4.31418, 3.59814, -2.06418, -4.31418, 3.59814, -3.31418, -0.56418, 3.59814, -3.31418, -0.56418, 3.59814, -2.06418, 0.68582, 3.59814, -2.06418, 0.68582, 3.59814, -3.31418, 5.43582, 3.59814, -3.31418, 5.43582, 3.59814, -2.06418, 6.68582, 3.59814, -2.06418, 6.68582, 3.59814, -3.31418, -5.31418, 1.09814, -3.06418, -5.31418, 1.09814, -2.31418, -4.56418, 1.09814, -2.31418, -4.56418, 1.09814, -3.06418, -0.31418, 1.09814, -3.06418, -0.31418, 1.09814, -2.31418, 0.43582, 1.09814, -2.31418, 0.43582, 1.09814, -3.06418, 5.68582, 1.09814, -3.06418, 5.68582, 1.09814, -2.31418, 6.43582, 1.09814, -2.31418, 6.43582, 1.09814, -3.06418, -6.31418, 1.09814, -1.06418, -7.56418, 1.09814, 2.68582, -1.31418, 1.09814, -1.06418, -3.56418, 1.09814, -1.06418, 1.93582, 1.09814, 2.68582, 1.68582, 1.09814, -1.56418, 1.43582, 1.09814, -1.06418, 4.68582, 1.09814, -1.06418, 7.68582, 1.09814, 2.68582, 7.68582, 1.09814, -1.31418)
-polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 8), PackedInt32Array(8, 4, 3), PackedInt32Array(4, 2, 3), PackedInt32Array(8, 9, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 8), PackedInt32Array(13, 12, 14), PackedInt32Array(14, 12, 8), PackedInt32Array(18, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(22, 21, 19), PackedInt32Array(19, 21, 20), PackedInt32Array(26, 25, 23), PackedInt32Array(23, 25, 24), PackedInt32Array(30, 29, 27), PackedInt32Array(27, 29, 28), PackedInt32Array(34, 33, 31), PackedInt32Array(31, 33, 32), PackedInt32Array(38, 37, 35), PackedInt32Array(35, 37, 36), PackedInt32Array(1, 39, 0), PackedInt32Array(0, 39, 40), PackedInt32Array(6, 41, 5), PackedInt32Array(5, 41, 42), PackedInt32Array(41, 43, 42), PackedInt32Array(42, 43, 40), PackedInt32Array(45, 44, 43), PackedInt32Array(40, 39, 42), PackedInt32Array(41, 45, 43), PackedInt32Array(10, 11, 44), PackedInt32Array(44, 11, 46), PackedInt32Array(44, 46, 43), PackedInt32Array(48, 47, 46), PackedInt32Array(46, 47, 43)]
+vertices = PackedVector3Array(-2.81418, 1.09814, -1.31418, -1.56418, 1.09814, -1.31418, -1.56418, 1.09814, -4.06418, -3.06418, 1.09814, -0.81418, 0.18582, 1.09814, -12.5642, -7.56418, 1.09814, -12.5642, -7.56418, 1.09814, -0.81418, 0.18582, 1.09814, -4.31418, 1.43582, 1.09814, -4.31418, 1.68582, 1.09814, -3.81418, 7.68582, 1.09814, -3.81418, 7.68582, 1.09814, -12.5642, 1.68582, 1.09814, -1.31418, -1.06418, 1.09814, -1.06418, -1.31418, 1.09814, 1.43582, -2.81418, 1.09814, 1.18582, -7.56418, 1.09814, 2.68582, 7.68582, 1.09814, 2.68582, -0.56418, 3.59814, -3.31418, -0.56418, 3.59814, -2.06418, 0.68582, 3.59814, -2.06418, 0.68582, 3.59814, -3.31418, -0.31418, 1.34814, -3.06418, -0.31418, 1.84814, -2.56418, 0.43582, 1.59814, -2.81418)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 6), PackedInt32Array(2, 6, 5), PackedInt32Array(2, 5, 4), PackedInt32Array(4, 7, 2), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 4), PackedInt32Array(8, 7, 4), PackedInt32Array(14, 13, 12), PackedInt32Array(3, 15, 6), PackedInt32Array(6, 15, 16), PackedInt32Array(14, 17, 16), PackedInt32Array(16, 15, 14), PackedInt32Array(12, 9, 10), PackedInt32Array(10, 17, 12), PackedInt32Array(12, 17, 14), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(24, 23, 22)]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_vidxs"]
 render_priority = 0
@@ -76,7 +76,7 @@ albedo_color = Color(1, 0.627451, 1, 1)
 
 [sub_resource type="Resource" id="Resource_cyoda"]
 script = ExtResource("12_h8n1e")
-cuteSound = ExtResource("10_5empu")
+cuteSound = ExtResource("9_2hs14")
 horrorSound = ExtResource("11_i4pp1")
 
 [node name="Node3D" type="Node3D"]

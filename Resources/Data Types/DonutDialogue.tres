@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://2fi5vk2heo6j"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://c2jg5u001ol3x"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_ldbxm"]
+[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="2_1rrto"]
 [ext_resource type="Script" path="res://Scripts/LineResource.gd" id="2_fh61m"]
 [ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="2_o5hda"]
+[ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="4_xic7s"]
+[ext_resource type="AudioStream" uid="uid://dacrm5y5c0lur" path="res://Audio/SFX/Dialogue/CharacterDialogue(5).wav" id="5_13y3b"]
+[ext_resource type="AudioStream" uid="uid://b2uk63r872jox" path="res://Audio/SFX/Dialogue/CharacterDialogue(3).wav" id="6_l0sfq"]
 
 [sub_resource type="Resource" id="Resource_6akrm"]
 script = ExtResource("2_fh61m")
@@ -15,6 +19,9 @@ exitDialogue = false
 script = ExtResource("1_ldbxm")
 mainLine = SubResource("Resource_6akrm")
 character = 1
+characterSprite = ExtResource("2_1rrto")
+reactionSprite = ExtResource("4_xic7s")
+sound = ExtResource("5_13y3b")
 optionsLines = Array[ExtResource("2_fh61m")]([])
 
 [sub_resource type="Resource" id="Resource_d7a2v"]
@@ -28,6 +35,9 @@ exitDialogue = false
 script = ExtResource("1_ldbxm")
 mainLine = SubResource("Resource_d7a2v")
 character = 0
+characterSprite = ExtResource("2_1rrto")
+reactionSprite = ExtResource("4_xic7s")
+sound = ExtResource("6_l0sfq")
 optionsLines = Array[ExtResource("2_fh61m")]([])
 
 [sub_resource type="Resource" id="Resource_si8q2"]
@@ -41,6 +51,9 @@ exitDialogue = false
 script = ExtResource("1_ldbxm")
 mainLine = SubResource("Resource_si8q2")
 character = 1
+characterSprite = ExtResource("2_1rrto")
+reactionSprite = ExtResource("4_xic7s")
+sound = ExtResource("5_13y3b")
 optionsLines = Array[ExtResource("2_fh61m")]([])
 
 [sub_resource type="Resource" id="Resource_ek3yl"]
@@ -54,19 +67,25 @@ exitDialogue = false
 script = ExtResource("1_ldbxm")
 mainLine = SubResource("Resource_ek3yl")
 character = 0
+characterSprite = ExtResource("2_1rrto")
+reactionSprite = ExtResource("4_xic7s")
+sound = ExtResource("6_l0sfq")
 optionsLines = Array[ExtResource("2_fh61m")]([])
 
 [sub_resource type="Resource" id="Resource_l008s"]
 script = ExtResource("2_fh61m")
 textEn = "Okay, okay, don't yell at me...."
 textEs = "Okay, okay, no me grites......"
-nextLineIndex = 0
+nextLineIndex = 5
 exitDialogue = true
 
 [sub_resource type="Resource" id="Resource_v71i1"]
 script = ExtResource("1_ldbxm")
 mainLine = SubResource("Resource_l008s")
 character = 1
+characterSprite = ExtResource("2_1rrto")
+reactionSprite = ExtResource("4_xic7s")
+sound = ExtResource("5_13y3b")
 optionsLines = Array[ExtResource("2_fh61m")]([])
 
 [resource]
