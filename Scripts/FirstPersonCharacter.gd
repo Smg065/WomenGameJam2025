@@ -59,6 +59,9 @@ func controls_conversation():
 		var toLine : int = talkingUi.push_nextline()
 		#Stop talking
 		if toLine == -2:
+			if talkingTo.isHostile:
+				get_tree().change_scene_to_file("res://Scenes/YouWin.tscn")
+				return
 			talkingTo = null
 			set_talking_UI()
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

@@ -34,7 +34,7 @@ import_script/path=""
 _subresources={
 "nodes": {
 "PATH:outside_grp/pPlane1": {
-"mesh_instance/layers": 2
+"mesh_instance/layers": 4
 }
 }
 }

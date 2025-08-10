@@ -1,16 +1,26 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq2qsqan3p3h3"]
+[gd_scene load_steps=8 format=3 uid="uid://bq2qsqan3p3h3"]
 
 [ext_resource type="PackedScene" uid="uid://y8rua0xie7b8" path="res://Scenes/MainEnviroment.tscn" id="1_b2rtm"]
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="2_y7blu"]
 [ext_resource type="PackedScene" uid="uid://clju01ad7pyl3" path="res://Resources/Spawnables/Goob.tscn" id="3_h6ov6"]
 [ext_resource type="AudioStream" uid="uid://vni3s3hwqqsc" path="res://Audio/Music/Horror/HorrorAmbientSound.wav" id="4_4j6ew"]
 [ext_resource type="Script" path="res://Scripts/FlatSound.gd" id="5_oioi7"]
+[ext_resource type="PackedScene" uid="uid://dn8dpi3qvw8kn" path="res://Resources/Spawnables/Donut.tscn" id="6_l5g2j"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_47rcm"]
+vertices = PackedVector3Array(-0.673227, 0.351491, -6.79153, -0.673227, 0.351491, -0.791531, 7.32677, 0.351491, -0.791531, 7.32677, 0.351491, -6.79153, -6.42323, 0.351491, 18.9585, -6.42323, 0.351491, 0.708469, -9.67323, 0.351491, 0.708469, -9.67323, 0.351491, 19.2085, -3.67323, 0.351491, 13.9585, -2.67323, 0.351491, 14.2085, -1.92323, 0.351491, 13.4585, -3.92323, 0.351491, 12.7085, 1.82677, 0.351491, 2.20847, 1.57677, 0.351491, 0.708469, -4.92323, 0.351491, 0.708469, -0.923227, 0.351491, 13.4585, 5.57677, 0.351491, 7.20847, 5.32677, 0.351491, 5.95847, 5.82677, 0.351491, 5.70847, 5.82677, 0.351491, 2.20847, -0.173227, 0.351491, 14.2085, -4.92323, 0.351491, 12.4585, 6.32677, 0.351491, 5.70847, 6.57677, 0.351491, 1.95847, 6.57677, 0.351491, 6.45847, 12.3268, 0.351491, 6.45847, 12.3268, 0.351491, 0.708469, 6.57677, 0.351491, 0.708469, 13.8268, 0.351491, 18.2085, 17.8268, 0.351491, 18.2085, 17.8268, 0.351491, 0.708469, 13.8268, 0.351491, 0.708469, 11.5768, 0.351491, 18.9585, 11.8268, 0.351491, 19.7085, 12.3268, 0.351491, 19.4585, -0.173227, 0.351491, 15.7085, -0.673227, 0.351491, 16.2085, 0.826773, 0.351491, 16.2085, 1.07677, 0.351491, 17.7085, 2.07677, 0.351491, 17.9585, 6.32677, 0.351491, 7.20847, 2.32677, 0.351491, 18.9585, -1.67323, 1.85149, 14.7085, -1.67323, 1.85149, 15.2085, -1.17323, 1.85149, 15.2085, -1.17323, 1.85149, 14.7085, -3.17323, 0.351491, 15.9585, -4.92323, 0.351491, 16.2085, -3.67323, 0.351491, 16.4585, -2.17323, 0.351491, 16.2085, -2.67323, 0.351491, 14.9585, -1.17323, 0.351491, 16.9585, -0.673227, 0.351491, 16.4585, -3.42323, 0.351491, 17.7085, -2.67323, 0.351491, 17.9585, -2.17323, 0.351491, 18.9585, -1.17323, 0.351491, 18.9585, 12.5768, 0.351491, 20.4585, 11.5768, 0.351491, 20.4585, 17.8268, 0.351491, 27.2085, 13.5768, 0.351491, 20.4585, -4.92323, 0.351491, 20.7085, -4.92323, 0.351491, 27.2085, -0.173227, 2.10149, 18.4585, -0.173227, 1.85149, 18.9585, 0.326773, 1.85149, 18.9585, 0.326773, 2.10149, 18.4585, -4.67323, 1.85149, 18.7085, -4.67323, 1.85149, 19.2085, -4.17323, 2.10149, 19.2085, -4.17323, 1.85149, 18.7085, -6.42323, 0.351491, 20.4585, -9.67323, 0.351491, 27.2085)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(14, 13, 12), PackedInt32Array(10, 11, 15), PackedInt32Array(15, 11, 16), PackedInt32Array(18, 17, 19), PackedInt32Array(19, 17, 12), PackedInt32Array(16, 20, 15), PackedInt32Array(17, 16, 12), PackedInt32Array(12, 16, 14), PackedInt32Array(14, 16, 11), PackedInt32Array(14, 11, 21), PackedInt32Array(22, 18, 19), PackedInt32Array(19, 23, 22), PackedInt32Array(22, 23, 24), PackedInt32Array(24, 23, 25), PackedInt32Array(25, 23, 26), PackedInt32Array(23, 27, 26), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 25), PackedInt32Array(37, 36, 35), PackedInt32Array(39, 38, 37), PackedInt32Array(37, 35, 20), PackedInt32Array(37, 20, 39), PackedInt32Array(39, 20, 40), PackedInt32Array(39, 40, 25), PackedInt32Array(39, 25, 32), PackedInt32Array(40, 24, 25), PackedInt32Array(32, 41, 39), PackedInt32Array(20, 16, 40), PackedInt32Array(45, 44, 42), PackedInt32Array(42, 44, 43), PackedInt32Array(48, 47, 46), PackedInt32Array(46, 50, 49), PackedInt32Array(49, 52, 51), PackedInt32Array(46, 49, 48), PackedInt32Array(48, 49, 53), PackedInt32Array(53, 49, 54), PackedInt32Array(54, 49, 51), PackedInt32Array(55, 54, 56), PackedInt32Array(56, 54, 51), PackedInt32Array(33, 34, 58), PackedInt32Array(58, 34, 57), PackedInt32Array(57, 60, 59), PackedInt32Array(28, 29, 60), PackedInt32Array(60, 29, 59), PackedInt32Array(57, 59, 58), PackedInt32Array(58, 59, 61), PackedInt32Array(61, 59, 62), PackedInt32Array(66, 65, 63), PackedInt32Array(63, 65, 64), PackedInt32Array(70, 69, 67), PackedInt32Array(67, 69, 68), PackedInt32Array(7, 4, 71), PackedInt32Array(71, 61, 62), PackedInt32Array(7, 71, 72), PackedInt32Array(72, 71, 62)]
 
 [node name="Main" type="Node3D"]
 
-[node name="MainEnviroment" parent="." instance=ExtResource("1_b2rtm")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_47rcm")
+
+[node name="MainEnviroment" parent="NavigationRegion3D" instance=ExtResource("1_b2rtm")]
+transform = Transform3D(1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, 0)
 
 [node name="CharacterBody" parent="." instance=ExtResource("2_y7blu")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 2, -5)
 
 [node name="NPC" parent="." instance=ExtResource("3_h6ov6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
@@ -25,3 +35,12 @@ axis_lock_angular_z = false
 stream = ExtResource("4_4j6ew")
 autoplay = true
 script = ExtResource("5_oioi7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.657359, 0.552914, -0.512021, 0.368649, 0.828549, 0.421431, 0.657249, 0.0882754, -0.748486, 0, 1, 0)
+light_color = Color(1, 0.926667, 0.78, 1)
+light_energy = 0.1
+
+[node name="Donut" parent="." instance=ExtResource("6_l5g2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51358, 1, 24.0579)
+waitForActive = false

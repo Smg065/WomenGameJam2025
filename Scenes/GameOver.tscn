@@ -1,35 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://xftqa1fe8fgm"]
+[gd_scene load_steps=5 format=3 uid="uid://xftqa1fe8fgm"]
 
-[ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="1_h2d2q"]
+[ext_resource type="Texture2D" uid="uid://bp0j2i0ttgodr" path="res://Images/UI/title_cf_LOSE.png" id="1_hnm82"]
 [ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_ks42e"]
 [ext_resource type="AudioStream" uid="uid://dy40f5b7xxwjp" path="res://Audio/Music/Horror/GameOverMusic.wav" id="2_x6jby"]
 [ext_resource type="Script" path="res://Scripts/FlatSound.gd" id="3_1ahtx"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_qe3mf"]
-font = ExtResource("1_h2d2q")
-font_size = 128
-
-[node name="GameOver" type="ColorRect"]
+[node name="GameOver" type="TextureRect"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.1, 0.05, 0.05, 1)
+texture = ExtResource("1_hnm82")
+expand_mode = 1
 script = ExtResource("1_ks42e")
 metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Game Over"
-label_settings = SubResource("LabelSettings_qe3mf")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="FlatSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_x6jby")

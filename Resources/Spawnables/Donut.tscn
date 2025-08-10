@@ -7,10 +7,12 @@
 [ext_resource type="Resource" uid="uid://dpuoo64yudv58" path="res://Resources/Data Types/Sounds/MonsterA.tres" id="4_7wr24"]
 [ext_resource type="Resource" uid="uid://w3qbxc45e5cl" path="res://Resources/Data Types/Sounds/MonsterB.tres" id="5_cm4dh"]
 
-[node name="Donut" instance=ExtResource("1_5yk6l")]
+[node name="Donut" node_paths=PackedStringArray("scaryVis") instance=ExtResource("1_5yk6l")]
 gravity_scale = 0.0
+scaryVis = NodePath("Donut_Bad_Idle_V01")
 dialogue = ExtResource("2_g6ecn")
 enemySounds = Array[ExtResource("3_iodrk")]([ExtResource("4_7wr24"), ExtResource("5_cm4dh")])
+waitForActive = true
 
 [node name="Donut_Bad_Idle_V01" parent="." index="5" instance=ExtResource("2_umdrc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

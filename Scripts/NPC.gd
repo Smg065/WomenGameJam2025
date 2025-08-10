@@ -1,8 +1,8 @@
 extends RigidBody3D
 class_name NPC
 
-@export var cuteVis : Sprite3D
-@export var scaryVis : MeshInstance3D
+@export var cuteVis : Node3D
+@export var scaryVis : Node3D
 @export var navInfo : NavigationAgent3D
 @export var player : Player
 @export var visRaycasts : Array[RayCast3D]
@@ -18,11 +18,14 @@ class_name NPC
 @export var curWanderPoint : Vector3
 
 @export var allWanderPoints : Array[Node3D]
+@export var waitForActive : bool
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta: float) -> void:
+	if waitForActive:
+		return
 	if player.talkingTo == self:
 		return
 	else:
@@ -32,7 +35,6 @@ func movement(delta):
 	#Wander Logic
 	if allWanderPoints.size() > 0:
 		wander_logic(delta)
-		
 	if !isHostile:
 		return
 	#Chase Logic
@@ -76,18 +78,20 @@ func chase_logic(delta: float) -> void:
 	navInfo.target_position = player.global_position
 	move_along_path(delta)
 	var distance_left = navInfo.target_position.distance_to(global_position)
-	if distance_left < 1:
+	if distance_left < 1.4:
 		game_over()
 
 func move_along_path(delta: float):
 	navInfo.get_next_path_position()
 	var pathNodes : PackedVector3Array = navInfo.get_current_navigation_path()
 	var distToTravel = delta * speed
+	#var lookDir : Vector3 = Vector3.FORWARD
 	for eachNode in pathNodes.size() - 1:
 		var distThisPath : float = pathNodes[eachNode].distance_to(pathNodes[eachNode + 1])
 		if distThisPath >= distToTravel:
 			var offset : Vector3 = pathNodes[eachNode].direction_to(pathNodes[eachNode + 1]) * distToTravel
 			position += offset
+			#lookDir = pathNodes[eachNode].direction_to(pathNodes[eachNode + 1])
 			break
 		distToTravel -= distThisPath
 

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxxdfni4crprc"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_cyyrr"]
+[ext_resource type="Texture2D" uid="uid://ic3d5obm4rgq" path="res://Images/UI/title_cf_win.png" id="1_dig5v"]
+[ext_resource type="AudioStream" uid="uid://dd30v4wwh5m87" path="res://Audio/Music/Cute/MainMenuSong.wav" id="3_vbqk0"]
+[ext_resource type="Script" path="res://Scripts/FlatSound.gd" id="4_7vefi"]
+
+[node name="WinnerIsYou" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dig5v")
+expand_mode = 1
+script = ExtResource("1_cyyrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="FlatSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vbqk0")
+autoplay = true
+script = ExtResource("4_7vefi")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="on_timeout"]

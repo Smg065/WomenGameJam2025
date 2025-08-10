@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://d1dv5ooo2dyse"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=18 format=3 uid="uid://d1lg4mhxldois"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_w3o2h"]
 [ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="2_4yemr"]
