@@ -105,6 +105,12 @@ transform = Transform3D(2.27448, 0, 0, 0, 1.02431, 0, 0, 0, 0.994991, -2.29095, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.31326, 0.0117648, 7.73402)
 
 [node name="InsideWall" parent="." instance=ExtResource("10_5r33i")]
+transform = Transform3D(1.10942, 0, 0.0123915, 0, 1.13137, 0, -0.0137484, 0, 0.999923, 4.49383, 0.011765, 0.0889148)
+
+[node name="InsideWall23" parent="." instance=ExtResource("10_5r33i")]
+transform = Transform3D(0.999923, 0, 0.0123915, 0, 1.13137, 0, -0.0123915, 0, 0.999923, 6.56884, 0.011765, 0.0632003)
+
+[node name="InsideWall22" parent="." instance=ExtResource("10_5r33i")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1.13137, 0, 1, 0, -4.37114e-08, 7.46654, 0.011765, 0.97574)
 
 [node name="InsideWall2" parent="." instance=ExtResource("10_5r33i")]
