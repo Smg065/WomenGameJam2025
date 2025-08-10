@@ -76,7 +76,7 @@ optionsLines = Array[ExtResource("2_fh61m")]([])
 script = ExtResource("2_fh61m")
 textEn = "Okay, okay, don't yell at me...."
 textEs = "Okay, okay, no me grites......"
-nextLineIndex = 0
+nextLineIndex = 5
 exitDialogue = true
 
 [sub_resource type="Resource" id="Resource_v71i1"]
