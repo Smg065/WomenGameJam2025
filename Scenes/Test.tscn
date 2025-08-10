@@ -114,14 +114,23 @@ layers = 2
 calculate_tangents = false
 mesh = ExtResource("4_i2rry")
 
-[node name="HorrorWorld" type="CSGCombiner3D" parent="NavigationRegion3D"]
-use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/HorrorWorld"]
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
+layers = 4
 use_collision = true
 size = Vector3(2, 2.61572, 2)
 material = SubResource("StandardMaterial3D_i4lsq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
+layers = 2
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+material = SubResource("StandardMaterial3D_ynnyk")
+
+[node name="HorrorWorld" type="CSGCombiner3D" parent="NavigationRegion3D"]
+layers = 4
+use_collision = true
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/HorrorWorld"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.906, -2.69373)
@@ -140,14 +149,9 @@ script = ExtResource("1_oolp0")
 playerSource = NodePath("../../../CharacterBody3D")
 localOffset = Vector3(0, 0, -4.5)
 
-[node name="JoyWorld" type="CSGCombiner3D" parent="NavigationRegion3D"]
+[node name="JoyWorld" type="CSGCombiner3D" parent="NavigationRegion3D" groups=["CuteCSG"]]
+layers = 2
 use_collision = true
-
-[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/JoyWorld"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
-use_collision = true
-size = Vector3(2, 2.61572, 2)
-material = SubResource("StandardMaterial3D_ynnyk")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/JoyWorld"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.906, -2.69373)
