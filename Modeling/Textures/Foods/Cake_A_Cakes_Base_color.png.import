@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i8wtegt02k6h"
-path.s3tc="res://.godot/imported/coffee_cup_A_CoffeeShopAtlas.png-bb950d00457d88b7a2faff046078e2fc.s3tc.ctex"
+uid="uid://bkqe7dxvs02hb"
+path.s3tc="res://.godot/imported/Cake_A_Cakes_Base_color.png-e8643aa42a3ba6a50a6b6ad70fbddb50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "2bf9be9377233d471e6fcfd22c825ede"
+"md5": "a10f0508c82a7ebc5738844525e5ee87"
 }
 
 [deps]
 
-source_file="res://Modeling/Props/Foods/coffee_cup_A_CoffeeShopAtlas.png"
-dest_files=["res://.godot/imported/coffee_cup_A_CoffeeShopAtlas.png-bb950d00457d88b7a2faff046078e2fc.s3tc.ctex"]
+source_file="res://Modeling/Textures/Foods/Cake_A_Cakes_Base_color.png"
+dest_files=["res://.godot/imported/Cake_A_Cakes_Base_color.png-e8643aa42a3ba6a50a6b6ad70fbddb50.s3tc.ctex"]
 
 [params]
 

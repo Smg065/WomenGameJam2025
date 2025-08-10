@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://eyexumlb84q3"
-path="res://.godot/imported/coffee_cup_C.glb-07c9d902e7583f59aac8ff1fa931d4d9.scn"
+uid="uid://d1ajc4h5a7k17"
+path="res://.godot/imported/Cake_B.glb-a390ac79403eed5d54aa90c5b17ee49e.scn"
 
 [deps]
 
-source_file="res://Modeling/Props/Foods/coffee_cup_C.glb"
-dest_files=["res://.godot/imported/coffee_cup_C.glb-07c9d902e7583f59aac8ff1fa931d4d9.scn"]
+source_file="res://Modeling/Props/Foods/Cake_B.glb"
+dest_files=["res://.godot/imported/Cake_B.glb-a390ac79403eed5d54aa90c5b17ee49e.scn"]
 
 [params]
 
