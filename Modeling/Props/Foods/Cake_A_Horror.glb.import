@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1bw7sw1h1ap8"
-path="res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"
+uid="uid://ce1acv284mnuc"
+path="res://.godot/imported/Cake_A_Horror.glb-78c16d0af4832f9e421577a52f27711c.scn"
 
 [deps]
 
-source_file="res://Modeling/Props/Foods/Chocolate_Truffles.glb"
-dest_files=["res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"]
+source_file="res://Modeling/Props/Foods/Cake_A_Horror.glb"
+dest_files=["res://.godot/imported/Cake_A_Horror.glb-78c16d0af4832f9e421577a52f27711c.scn"]
 
 [params]
 
@@ -33,8 +33,8 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Chocolate_truffles": {
-"mesh_instance/layers": 2
+"PATH:Cake_A": {
+"mesh_instance/layers": 4
 }
 }
 }

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3xcmclicr48r"
-path.s3tc="res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"
+uid="uid://3fdbr7e4suo0"
+path.s3tc="res://.godot/imported/Cake_C_Horror_Cakes_Base_color.png-1e12b54ed0d576da5904dddbeb8bb01f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a10f0508c82a7ebc5738844525e5ee87"
+}
 
 [deps]
 
-source_file="res://Modeling/Textures/Cash Register/Terror/Register_Roughness.png"
-dest_files=["res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"]
+source_file="res://Modeling/Props/Foods/Cake_C_Horror_Cakes_Base_color.png"
+dest_files=["res://.godot/imported/Cake_C_Horror_Cakes_Base_color.png-1e12b54ed0d576da5904dddbeb8bb01f.s3tc.ctex"]
 
 [params]
 

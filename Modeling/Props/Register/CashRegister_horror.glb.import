@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1bw7sw1h1ap8"
-path="res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"
+uid="uid://8w8aruh3cgyk"
+path="res://.godot/imported/CashRegister_horror.glb-ad3b70eb3ea87768ac01cd6616516220.scn"
 
 [deps]
 
-source_file="res://Modeling/Props/Foods/Chocolate_Truffles.glb"
-dest_files=["res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"]
+source_file="res://Modeling/Props/Register/CashRegister_horror.glb"
+dest_files=["res://.godot/imported/CashRegister_horror.glb-ad3b70eb3ea87768ac01cd6616516220.scn"]
 
 [params]
 
@@ -33,8 +33,8 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Chocolate_truffles": {
-"mesh_instance/layers": 2
+"PATH:Cash Register": {
+"mesh_instance/layers": 4
 }
 }
 }

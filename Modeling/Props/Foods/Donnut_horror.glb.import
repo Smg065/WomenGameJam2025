@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1bw7sw1h1ap8"
-path="res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"
+uid="uid://dua0lwv54da5a"
+path="res://.godot/imported/Donnut_horror.glb-bfa3095edcec3a7cd15577c2823df26b.scn"
 
 [deps]
 
-source_file="res://Modeling/Props/Foods/Chocolate_Truffles.glb"
-dest_files=["res://.godot/imported/Chocolate_Truffles.glb-1520ebcdf06c8b250bc773ac3eb82420.scn"]
+source_file="res://Modeling/Props/Foods/Donnut_horror.glb"
+dest_files=["res://.godot/imported/Donnut_horror.glb-bfa3095edcec3a7cd15577c2823df26b.scn"]
 
 [params]
 
@@ -33,8 +33,8 @@ animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={
 "nodes": {
-"PATH:Chocolate_truffles": {
-"mesh_instance/layers": 2
+"PATH:Donnut": {
+"mesh_instance/layers": 4
 }
 }
 }

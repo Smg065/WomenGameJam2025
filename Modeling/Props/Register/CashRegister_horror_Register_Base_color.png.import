@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3xcmclicr48r"
-path.s3tc="res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"
+uid="uid://ei6ub6pgobdi"
+path.s3tc="res://.godot/imported/CashRegister_horror_Register_Base_color.png-8150c5cd0c5fa26dbe31675d8773b528.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "407da930b52ed9ceb9b12131d48cec61"
+}
 
 [deps]
 
-source_file="res://Modeling/Textures/Cash Register/Terror/Register_Roughness.png"
-dest_files=["res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"]
+source_file="res://Modeling/Props/Register/CashRegister_horror_Register_Base_color.png"
+dest_files=["res://.godot/imported/CashRegister_horror_Register_Base_color.png-8150c5cd0c5fa26dbe31675d8773b528.s3tc.ctex"]
 
 [params]
 

@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3xcmclicr48r"
-path.s3tc="res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"
+uid="uid://d37hgb0kro4d"
+path.s3tc="res://.godot/imported/Donnut_horror_DefaultMaterial_Base_color.png-90a34e80f1fcd4a913efeafc25f2dfb7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "5d7a7b7caed37eaa2afa6accf227ba4d"
+}
 
 [deps]
 
-source_file="res://Modeling/Textures/Cash Register/Terror/Register_Roughness.png"
-dest_files=["res://.godot/imported/Register_Roughness.png-5ec42fc8d99819a1ba0ef68b62ce4650.s3tc.ctex"]
+source_file="res://Modeling/Props/Foods/Donnut_horror_DefaultMaterial_Base_color.png"
+dest_files=["res://.godot/imported/Donnut_horror_DefaultMaterial_Base_color.png-90a34e80f1fcd4a913efeafc25f2dfb7.s3tc.ctex"]
 
 [params]
 
