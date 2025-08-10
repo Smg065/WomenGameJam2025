@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://c2jg5u001ol3x"]
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://2fi5vk2heo6j"]
 
 [ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_ldbxm"]
 [ext_resource type="Script" path="res://Scripts/LineResource.gd" id="2_fh61m"]
@@ -21,7 +21,7 @@ optionsLines = Array[ExtResource("2_fh61m")]([])
 script = ExtResource("2_fh61m")
 textEn = "I don't care, stop scaring Goob every time I leave"
 textEs = "No me importa, deja de asustar a Goob cada vez que me voy"
-nextLineIndex = 0
+nextLineIndex = 2
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_ukvmu"]
@@ -34,7 +34,7 @@ optionsLines = Array[ExtResource("2_fh61m")]([])
 script = ExtResource("2_fh61m")
 textEn = "You're no fun......"
 textEs = "No sabes divertirte....."
-nextLineIndex = 0
+nextLineIndex = 3
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_fvlp6"]
@@ -47,7 +47,7 @@ optionsLines = Array[ExtResource("2_fh61m")]([])
 script = ExtResource("2_fh61m")
 textEn = "Now go back to the fridge with the rest."
 textEs = "Ahora volve a la heladera con el resto."
-nextLineIndex = 0
+nextLineIndex = 4
 exitDialogue = false
 
 [sub_resource type="Resource" id="Resource_rhai4"]

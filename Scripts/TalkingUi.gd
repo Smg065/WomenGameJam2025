@@ -40,6 +40,6 @@ func push_nextline() -> int:
 		return -1
 	if currentLine.mainLine.exitDialogue:
 		return -2
-	if currentLine.optionsLines != null:
+	if currentLine.optionsLines.size() > 0:
 		return -1
 	return currentLine.mainLine.nextLineIndex

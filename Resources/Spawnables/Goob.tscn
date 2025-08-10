@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://clju01ad7pyl3"]
+[gd_scene load_steps=6 format=3 uid="uid://clju01ad7pyl3"]
 
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="1_54ffm"]
+[ext_resource type="Resource" uid="uid://d1lg4mhxldois" path="res://Resources/Data Types/GoobDialogue.tres" id="2_i5y8v"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_ow401"]
 [ext_resource type="Texture2D" uid="uid://cs2hyxt0sjfo4" path="res://Images/Sprites/wgj_chara_2.png" id="3_dvqy6"]
 
@@ -18,6 +19,7 @@ shader_parameter/texture_albedo = ExtResource("3_dvqy6")
 
 [node name="Goob" instance=ExtResource("1_54ffm")]
 gravity_scale = 0.0
+dialogue = ExtResource("2_i5y8v")
 isHostile = false
 
 [node name="Cute" parent="." index="1"]
