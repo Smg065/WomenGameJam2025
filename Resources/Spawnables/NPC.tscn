@@ -75,6 +75,7 @@ debug_shape_custom_color = Color(1, 0, 0, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 
 [node name="Donut_Body_Evil_V01" parent="Donut_Good_V01" index="0"]
+layers = 4
 surface_material_override/0 = SubResource("ShaderMaterial_jk7mm")
 surface_material_override/1 = SubResource("ShaderMaterial_rk1bh")
 

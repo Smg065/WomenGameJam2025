@@ -2,6 +2,7 @@ extends CharacterBody3D
 class_name Player
 
 @export var mainCamera : Camera3D
+@export var cuteCamera : Camera3D
 @export var mouseSensitivity : float = .005
 
 @export var lightLength : float = 9
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	move_camera(-Input.get_vector("CameraLeft","CameraRight","CameraUp","CameraDown") * Vector2(10,7))
+	sync_cams()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -34,3 +36,7 @@ func get_move_vector() -> Vector2:
 func move_camera(cameraInput : Vector2) -> void:
 	rotate_y(cameraInput.x * mouseSensitivity)
 	mainCamera.rotate_x(cameraInput.y * mouseSensitivity)
+
+func sync_cams():
+	cuteCamera.global_position = mainCamera.global_position
+	cuteCamera.global_rotation = mainCamera.global_rotation
