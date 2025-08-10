@@ -1,47 +1,189 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2rvucsxs8qe3"]
+[gd_scene load_steps=20 format=3 uid="uid://d2rvucsxs8qe3"]
 
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
+[ext_resource type="Script" path="res://Scripts/Flashlight.gd" id="1_oolp0"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_eyvy8"]
-[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Art/3D Assets/floor.glb" id="3_0h5wc"]
+[ext_resource type="PackedScene" uid="uid://b37tlo7r78wmt" path="res://Modeling/Models/floor.glb" id="3_0h5wc"]
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="3_e2cxc"]
-[ext_resource type="Texture2D" uid="uid://dihem0l4ddhcj" path="res://Modeling/Textures/OtherTexture.png" id="5_13vnn"]
+[ext_resource type="Material" uid="uid://b40eakpjivgbs" path="res://Modeling/Materials/Material.001.1001.tres" id="3_rkhp6"]
+[ext_resource type="Texture2D" uid="uid://cpig15chcpp7k" path="res://Modeling/Textures/floor/floor_cute_BaseColor_1001.png" id="4_gegtd"]
+[ext_resource type="ArrayMesh" uid="uid://dbevl2le8o3us" path="res://Modeling/Props/Register_table_cute/register_table_cute2_register_table_cute_geo.res" id="4_i2rry"]
+[ext_resource type="Texture2D" uid="uid://ce83vb8kf0mh8" path="res://Modeling/Props/Register_table_horror/register_table_horror_0.png" id="4_w6jk6"]
+[ext_resource type="Texture2D" uid="uid://n0k0g45k233b" path="res://Modeling/Textures/floor/floor_cute_Normal_1001.png" id="5_pkmj7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ocib"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_55f7v"]
+vertices = PackedVector3Array(-2.81418, 1.09814, -1.31418, -1.56418, 1.09814, -1.31418, -1.56418, 1.09814, -4.06418, -3.06418, 1.09814, -0.81418, 0.18582, 1.09814, -12.5642, -7.56418, 1.09814, -12.5642, -7.56418, 1.09814, -0.81418, 0.18582, 1.09814, -4.31418, 1.43582, 1.09814, -4.31418, 1.68582, 1.09814, -3.81418, 7.68582, 1.09814, -3.81418, 7.68582, 1.09814, -12.5642, 1.68582, 1.09814, -1.31418, -1.06418, 1.09814, -1.06418, -1.31418, 1.09814, 1.43582, -2.81418, 1.09814, 1.18582, -7.56418, 1.09814, 2.68582, 7.68582, 1.09814, 2.68582, -0.56418, 3.59814, -3.31418, -0.56418, 3.59814, -2.06418, 0.68582, 3.59814, -2.06418, 0.68582, 3.59814, -3.31418, -0.31418, 1.34814, -3.06418, -0.31418, 1.84814, -2.56418, 0.43582, 1.59814, -2.81418)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 6), PackedInt32Array(2, 6, 5), PackedInt32Array(2, 5, 4), PackedInt32Array(4, 7, 2), PackedInt32Array(9, 8, 10), PackedInt32Array(10, 8, 11), PackedInt32Array(11, 8, 4), PackedInt32Array(8, 7, 4), PackedInt32Array(14, 13, 12), PackedInt32Array(3, 15, 6), PackedInt32Array(6, 15, 16), PackedInt32Array(14, 17, 16), PackedInt32Array(16, 15, 14), PackedInt32Array(12, 9, 10), PackedInt32Array(10, 17, 12), PackedInt32Array(12, 17, 14), PackedInt32Array(21, 20, 18), PackedInt32Array(18, 20, 19), PackedInt32Array(24, 23, 22)]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vidxs"]
 render_priority = 0
 shader = ExtResource("2_eyvy8")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/is_sprite = null
-shader_parameter/inverse_lighting = false
-shader_parameter/light_min_max = Vector2(0, 0.6)
+shader_parameter/inverse_lighting = null
+shader_parameter/light_min_max = null
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
-shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("5_13vnn")
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b6oni"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material.001.1001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yhu8o"]
+resource_name = "floor_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": ExtResource("3_rkhp6"),
+"name": "Material.001.1001",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_b6oni")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0uvtu"]
+albedo_texture = ExtResource("4_gegtd")
+normal_enabled = true
+normal_texture = ExtResource("5_pkmj7")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xye7u"]
 size = Vector3(15, 1, 15)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6id0"]
+albedo_texture = ExtResource("4_w6jk6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4lsq"]
+albedo_color = Color(0.57, 0.0513, 0.0513, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ynnyk"]
+albedo_color = Color(1, 0.627451, 1, 1)
+
 [node name="Node3D" type="Node3D"]
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_55f7v")
 
-[node name="floor" parent="." instance=ExtResource("3_0h5wc")]
+[node name="floor" parent="NavigationRegion3D" instance=ExtResource("3_0h5wc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 
-[node name="Plane" parent="floor" index="0"]
+[node name="Plane" parent="NavigationRegion3D/floor" index="0"]
 transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
 layers = 4
-material_overlay = SubResource("ShaderMaterial_1ocib")
+material_overlay = SubResource("ShaderMaterial_vidxs")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="floor"]
+[node name="Plane2" type="MeshInstance3D" parent="NavigationRegion3D/floor"]
+transform = Transform3D(8.06418, 0, 0, 0, 8.06418, 0, 0, 0, 8.06418, 0, 0.69944, 0)
+layers = 2
+material_overlay = SubResource("ShaderMaterial_vidxs")
+mesh = SubResource("ArrayMesh_yhu8o")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_0uvtu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="floor/StaticBody3D"]
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/floor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_xye7u")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 4
+calculate_tangents = false
+mesh = ExtResource("4_i2rry")
+material = SubResource("StandardMaterial3D_h6id0")
+
+[node name="CSGMesh3D2" type="CSGMesh3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+layers = 2
+calculate_tangents = false
+mesh = ExtResource("4_i2rry")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
+layers = 4
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+material = SubResource("StandardMaterial3D_i4lsq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
+layers = 2
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+material = SubResource("StandardMaterial3D_ynnyk")
+
+[node name="HorrorWorld" type="CSGCombiner3D" parent="NavigationRegion3D"]
+layers = 4
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/HorrorWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.906, -2.69373)
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+material = SubResource("StandardMaterial3D_i4lsq")
+
+[node name="FlashlightErodeHorror" type="CSGCylinder3D" parent="NavigationRegion3D/HorrorWorld" node_paths=PackedStringArray("playerSource") groups=["Flashlight"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.506, -4.5)
+operation = 2
+radius = 5.0
+height = 9.0
+sides = 32
+cone = true
+script = ExtResource("1_oolp0")
+playerSource = NodePath("../../../CharacterBody3D")
+localOffset = Vector3(0, 0, -4.5)
+
+[node name="JoyWorld" type="CSGCombiner3D" parent="NavigationRegion3D" groups=["CuteCSG"]]
+layers = 2
+use_collision = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="NavigationRegion3D/JoyWorld"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 1.906, -2.69373)
+use_collision = true
+size = Vector3(2, 2.61572, 2)
+material = SubResource("StandardMaterial3D_ynnyk")
+
+[node name="FlashlightCreateJoy" type="CSGCylinder3D" parent="NavigationRegion3D/JoyWorld" node_paths=PackedStringArray("playerSource") groups=["Flashlight"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 2.506, -4.5)
+operation = 1
+radius = 5.0
+height = 9.0
+sides = 32
+cone = true
+script = ExtResource("1_oolp0")
+playerSource = NodePath("../../../CharacterBody3D")
+localOffset = Vector3(0, 0, -4.5)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("1_be6qp")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 0, 3, 0)
 light_energy = 0.1
 
 [node name="NPC" parent="." node_paths=PackedStringArray("player") instance=ExtResource("3_e2cxc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6)
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
 player = NodePath("../CharacterBody3D")
 
-[editable path="floor"]
+[editable path="NavigationRegion3D/floor"]

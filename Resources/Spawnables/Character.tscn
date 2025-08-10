@@ -1,43 +1,178 @@
-[gd_scene load_steps=4 format=3 uid="uid://hlx74e2npk7b"]
+[gd_scene load_steps=10 format=3 uid="uid://hlx74e2npk7b"]
 
 [ext_resource type="Script" path="res://Scripts/FirstPersonCharacter.gd" id="1_xjw2c"]
+[ext_resource type="Texture2D" uid="uid://cvlhrbfkbafu1" path="res://Images/UI/LightMask.png" id="2_myl7v"]
+[ext_resource type="Texture2D" uid="uid://d4kj1e35b7i0e" path="res://Images/icon.svg" id="3_21w6c"]
+[ext_resource type="Texture2D" uid="uid://cp6bu2ogc54mw" path="res://Images/UI/lulu_textbox.png" id="4_nsk1l"]
+[ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="5_s8j4s"]
+[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="6_11540"]
+[ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="7_k2ri7"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_8cvjj"]
-viewport_path = NodePath("TextureRect/SubViewport")
+[sub_resource type="LabelSettings" id="LabelSettings_ncfar"]
+font = ExtResource("5_s8j4s")
+font_size = 48
+font_color = Color(0.392157, 0.0431373, 0.137255, 1)
 
-[node name="CharacterBody3D" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera", "cuteCamera")]
+[node name="CharacterBody" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera", "cuteCamera", "interactCast", "wanderUI", "convoUI") groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_xjw2c")
-mainCamera = NodePath("CollisionShape3D/RealCamera")
-cuteCamera = NodePath("TextureRect/SubViewport/CuteCamera")
+mainCamera = NodePath("CharacterHitbox/RealCamera")
+cuteCamera = NodePath("PlayerUI/CutoutMask/SubViewportContainer/SubViewport/CuteCamera")
+cuteLightVis = Array[NodePath]([NodePath("PlayerUI/CutoutMask"), NodePath("CharacterHitbox/RealCamera/Cutelight"), NodePath("PlayerUI/CutoutMask/SubViewportContainer"), NodePath("PlayerUI/CutoutMask/SubViewportContainer/SubViewport/CuteCamera")])
+interactCast = NodePath("CharacterHitbox/RealCamera/InteractCast")
+wanderUI = NodePath("PlayerUI/WanderUI")
+convoUI = NodePath("PlayerUI/NVUI")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CharacterHitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_afhwg")
 
-[node name="RealCamera" type="Camera3D" parent="CollisionShape3D"]
+[node name="RealCamera" type="Camera3D" parent="CharacterHitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 cull_mask = 1048573
 
-[node name="Cutelight" type="SpotLight3D" parent="CollisionShape3D/RealCamera"]
+[node name="Cutelight" type="SpotLight3D" parent="CharacterHitbox/RealCamera"]
 layers = 7
+light_color = Color(1, 0.92, 0.92, 1)
 spot_range = 10.0
 spot_attenuation = -0.25
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="InteractCast" type="RayCast3D" parent="CharacterHitbox/RealCamera"]
+target_position = Vector3(0, 0, -2.5)
+collision_mask = 6
+
+[node name="PlayerUI" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("ViewportTexture_8cvjj")
+metadata/_edit_use_anchors_ = true
 
-[node name="SubViewport" type="SubViewport" parent="TextureRect"]
-transparent_bg = true
+[node name="CutoutMask" type="TextureRect" parent="PlayerUI"]
+clip_children = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_myl7v")
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="PlayerUI/CutoutMask"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="PlayerUI/CutoutMask/SubViewportContainer"]
+handle_input_locally = false
 size = Vector2i(1280, 720)
+render_target_update_mode = 4
 
-[node name="CuteCamera" type="Camera3D" parent="TextureRect/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50478, 0)
-cull_mask = 1048570
+[node name="CuteCamera" type="Camera3D" parent="PlayerUI/CutoutMask/SubViewportContainer/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+cull_mask = 1048571
+
+[node name="WanderUI" type="Control" parent="PlayerUI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Battery" type="TextureProgressBar" parent="PlayerUI/WanderUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.706
+anchor_top = 0.846278
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.319946
+offset_top = -0.320007
+nine_patch_stretch = true
+texture_under = ExtResource("3_21w6c")
+texture_over = ExtResource("3_21w6c")
+texture_progress = ExtResource("3_21w6c")
+metadata/_edit_use_anchors_ = true
+
+[node name="NVUI" type="Control" parent="PlayerUI"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogeBox" type="TextureRect" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_nsk1l")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="PlayerUI/NVUI/DialogeBox"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.2875
+anchor_top = 0.491667
+anchor_right = 0.722656
+anchor_bottom = 1.0
+text = "This is a test to see if text renders here!"
+label_settings = SubResource("LabelSettings_ncfar")
+autowrap_mode = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.409722
+anchor_right = 0.203125
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_11540")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.794531
+anchor_top = 0.409722
+anchor_right = 0.997656
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_k2ri7")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Options" type="VBoxContainer" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.322656
+anchor_top = 0.243056
+anchor_right = 0.675
+anchor_bottom = 0.569444
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true

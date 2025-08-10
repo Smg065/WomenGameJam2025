@@ -17,7 +17,7 @@ Meg
 Mila
 Florayiduo
 Smg065"
-config/version="0.0.0"
+config/version="0.0.1"
 run/main_scene="res://Scenes/Test.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://Images/icon.svg"
@@ -30,6 +30,7 @@ buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="viewport"
 
 [file_customization]
 
@@ -43,6 +44,11 @@ folder_colors={
 "res://Scripts/": "gray",
 "res://Shaders/": "purple"
 }
+
+[global_group]
+
+Flashlight="Flashlight CSG Logic"
+CuteCSG=""
 
 [input]
 
@@ -96,14 +102,22 @@ CameraRight={
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":2,"axis_value":1.0,"script":null)
 ]
 }
+ToggleFlashlight={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":70,"key_label":0,"unicode":102,"location":0,"echo":false,"script":null)
+]
+}
+Interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":69,"location":0,"echo":false,"script":null)
+]
+}
 
 [layer_names]
 
 3d_render/layer_1="Shared Elements"
 3d_render/layer_2="Cute World"
 3d_render/layer_3="Scary World"
-
-[rendering]
-
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+3d_physics/layer_1="Enviroments"
+3d_physics/layer_2="Characters"
+3d_physics/layer_3="Collectable"

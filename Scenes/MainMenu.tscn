@@ -1,0 +1,204 @@
+[gd_scene load_steps=4 format=3 uid="uid://xh4n5233txfb"]
+
+[ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="1_rcmfx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5ymtl"]
+font = ExtResource("1_rcmfx")
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxst4"]
+font = ExtResource("1_rcmfx")
+font_size = 64
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Main" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoTexture" type="TextureRect" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.449
+offset_bottom = -0.280029
+
+[node name="Control" type="VBoxContainer" parent="Main"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249219
+anchor_top = 0.5
+anchor_right = 0.752344
+anchor_bottom = 0.916667
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Play" type="Button" parent="Main/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Play"
+
+[node name="Settings" type="Button" parent="Main/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Settings"
+
+[node name="Credits" type="Button" parent="Main/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Credits"
+
+[node name="Exit" type="Button" parent="Main/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Exit"
+
+[node name="Settings" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249219
+anchor_top = 0.5
+anchor_right = 0.752344
+anchor_bottom = 0.916667
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MouseSensitivity" type="Label" parent="Settings/Control"]
+layout_mode = 2
+text = "Mouse Sensitivity"
+label_settings = SubResource("LabelSettings_5ymtl")
+horizontal_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="Settings/Control"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Settings/Control"]
+layout_mode = 2
+text = "Volume"
+label_settings = SubResource("LabelSettings_5ymtl")
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="Settings/Control"]
+layout_mode = 2
+
+[node name="Fullscreen" type="Button" parent="Settings/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Fullscreen"
+
+[node name="Back" type="Button" parent="Settings/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[node name="Credits" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Button" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249219
+anchor_top = 0.816667
+anchor_right = 0.752344
+anchor_bottom = 0.916667
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Back"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.0666667
+anchor_right = 1.0
+anchor_bottom = 0.713389
+offset_bottom = 0.359985
+grow_horizontal = 2
+grow_vertical = 2
+text = "Smg
+Cherrybones
+Florayiduo
+Larissa Paes
+Mila
+Meg
+Lulovera"
+label_settings = SubResource("LabelSettings_yxst4")
+horizontal_alignment = 1
+autowrap_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="ConfirmExit" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="VBoxContainer" parent="ConfirmExit"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.249219
+anchor_top = 0.711111
+anchor_right = 0.752344
+anchor_bottom = 0.916667
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Yes" type="Button" parent="ConfirmExit/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "Yes"
+
+[node name="No" type="Button" parent="ConfirmExit/Control"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("1_rcmfx")
+theme_override_font_sizes/font_size = 64
+text = "No"

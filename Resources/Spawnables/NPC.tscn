@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://djt7xw3pukif3"]
+[gd_scene load_steps=9 format=3 uid="uid://djt7xw3pukif3"]
 
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_4u7gq"]
 [ext_resource type="Shader" path="res://Shaders/LightAsAlpha.gdshader" id="2_foh23"]
-[ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="3_jrhtd"]
+[ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="3_5h6y4"]
+[ext_resource type="PackedScene" uid="uid://bj5mymh0k6ya" path="res://Modeling/Characters/Monsters/Donut_Good_V01.glb" id="4_qiced"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oss53"]
 
@@ -10,32 +11,44 @@
 render_priority = 0
 shader = ExtResource("2_foh23")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.1
 shader_parameter/is_sprite = true
 shader_parameter/inverse_lighting = null
 shader_parameter/light_min_max = Vector2(0, 0.6)
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
-shader_parameter/texture_albedo = ExtResource("3_jrhtd")
+shader_parameter/texture_albedo = ExtResource("3_5h6y4")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7unop"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk7mm"]
 render_priority = 0
 shader = ExtResource("2_foh23")
 shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
 shader_parameter/is_sprite = null
 shader_parameter/inverse_lighting = true
-shader_parameter/light_min_max = Vector2(0, 0.4)
+shader_parameter/light_min_max = Vector2(0, 0.6)
 shader_parameter/uv1_scale = Vector3(1, 1, 1)
 shader_parameter/uv1_offset = null
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ipt61"]
-material = SubResource("ShaderMaterial_7unop")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rk1bh"]
+render_priority = 0
+shader = ExtResource("2_foh23")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor_threshold = 0.5
+shader_parameter/is_sprite = null
+shader_parameter/inverse_lighting = true
+shader_parameter/light_min_max = Vector2(0, 0.6)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
 
-[node name="NPC" type="RigidBody3D" node_paths=PackedStringArray("cuteVis", "scaryVis", "navInfo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -6)
+[node name="NPC" type="RigidBody3D" node_paths=PackedStringArray("cuteVis", "scaryVis", "navInfo", "visRaycasts")]
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_4u7gq")
 cuteVis = NodePath("Cute")
-scaryVis = NodePath("MeshInstance3D")
+scaryVis = NodePath("Donut_Good_V01/Donut_Body_Evil_V01")
 navInfo = NodePath("NavigationAgent3D")
+visRaycasts = [NodePath("VisLineTop"), NodePath("VisLineBottom")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_oss53")
@@ -43,13 +56,27 @@ shape = SubResource("CapsuleShape3D_oss53")
 [node name="Cute" type="Sprite3D" parent="."]
 layers = 2
 material_override = SubResource("ShaderMaterial_h5ws5")
-pixel_size = 0.002
+pixel_size = 0.006
 billboard = 2
 shaded = true
-texture = ExtResource("3_jrhtd")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-layers = 4
-mesh = SubResource("CapsuleMesh_ipt61")
+texture = ExtResource("3_5h6y4")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="VisLineTop" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="VisLineBottom" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0)
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Donut_Good_V01" parent="." instance=ExtResource("4_qiced")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="Donut_Body_Evil_V01" parent="Donut_Good_V01" index="0"]
+layers = 4
+surface_material_override/0 = SubResource("ShaderMaterial_jk7mm")
+surface_material_override/1 = SubResource("ShaderMaterial_rk1bh")
+
+[editable path="Donut_Good_V01"]
