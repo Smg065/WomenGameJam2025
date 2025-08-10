@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqrpbslvgtub2"]
+
+[ext_resource type="PackedScene" uid="uid://di2bd22ruhaen" path="res://Modeling/Props/table_and_chair/chair_cute.glb" id="1_6j2b8"]
+[ext_resource type="PackedScene" uid="uid://ba35xe0k3pr8j" path="res://Modeling/Props/table_and_chair/chair_horror.glb" id="2_1niew"]
+
+[node name="Chair" type="Node3D"]
+
+[node name="chair_cute" parent="." instance=ExtResource("1_6j2b8")]
+
+[node name="chair_horror" parent="." instance=ExtResource("2_1niew")]

@@ -3,9 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-
-uid="uid://bj5mymh0k6ya"
-
+uid="uid://dop1h0svxdmj7"
 path="res://.godot/imported/Donut_Good_V01.glb-82320dd1f78fa6e5959ee9de440f125a.scn"
 
 [deps]
@@ -18,8 +16,7 @@ dest_files=["res://.godot/imported/Donut_Good_V01.glb-82320dd1f78fa6e5959ee9de44
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=0.75
-
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -34,18 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-
-_subresources={
-"materials": {
-"Donut_Body": {
-"use_external/enabled": true,
-"use_external/path": "res://Modeling/Materials/Donut_Body.tres"
-},
-"Donut_Legs": {
-"use_external/enabled": true,
-"use_external/path": "res://Modeling/Materials/Donut_Legs.tres"
-}
-}
-
-gltf/naming_version=1
+_subresources={}
+gltf/naming_version=0
 gltf/embedded_image_handling=1

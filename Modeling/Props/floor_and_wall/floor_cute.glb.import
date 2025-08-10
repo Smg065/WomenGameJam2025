@@ -16,7 +16,7 @@ dest_files=["res://.godot/imported/floor_cute.glb-7f35edbac2e9308c5c8c29229c7723
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=8.5
 nodes/import_as_skeleton_bones=false
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -31,6 +31,12 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:floor": {
+"mesh_instance/layers": 2
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

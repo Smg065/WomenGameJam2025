@@ -12,7 +12,10 @@ class_name NPC
 
 @export var dialogue : Dialogue
 
-var isHostile : bool = true
+@export var isHostile : bool = true
+
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(delta: float) -> void:
 	if player.talkingTo == self:

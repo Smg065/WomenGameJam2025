@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://xh4n5233txfb"]
+[gd_scene load_steps=10 format=3 uid="uid://xh4n5233txfb"]
 
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_m3v1k"]
 [ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="1_rcmfx"]
+[ext_resource type="Texture2D" uid="uid://dq4igc4jtsoju" path="res://Images/UI/wgj_start.png" id="2_253i4"]
+[ext_resource type="Texture2D" uid="uid://whsu1mhhno26" path="res://Images/UI/Title.png" id="2_qxhlg"]
+[ext_resource type="Texture2D" uid="uid://bhadgxnedr2ql" path="res://Images/UI/wgj_settings.png" id="3_tcdhu"]
+[ext_resource type="Texture2D" uid="uid://dmw0ok47bwemp" path="res://Images/UI/wgj_credits.png" id="4_36at8"]
+[ext_resource type="Texture2D" uid="uid://cdt2noe3wuro7" path="res://Images/UI/wgj_exit.png" id="5_oj5ua"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5ymtl"]
 font = ExtResource("1_rcmfx")
@@ -10,13 +16,15 @@ font_size = 64
 font = ExtResource("1_rcmfx")
 font_size = 64
 
-[node name="MainMenu" type="Control"]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("allCatagories")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_m3v1k")
+allCatagories = [NodePath("Main"), NodePath("Settings"), NodePath("Credits"), NodePath("ConfirmExit")]
 
 [node name="Main" type="TextureRect" parent="."]
 layout_mode = 1
@@ -31,46 +39,51 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 0.449
-offset_bottom = -0.280029
+offset_top = 36.0
+offset_bottom = -62.28
+texture = ExtResource("2_qxhlg")
+expand_mode = 3
+stretch_mode = 5
 
 [node name="Control" type="VBoxContainer" parent="Main"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.249219
-anchor_top = 0.5
-anchor_right = 0.752344
-anchor_bottom = 0.916667
+anchor_left = 0.422656
+anchor_top = 0.409722
+anchor_right = 0.594531
+anchor_bottom = 0.933333
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Play" type="Button" parent="Main/Control"]
+[node name="Play" type="TextureButton" parent="Main/Control"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_rcmfx")
-theme_override_font_sizes/font_size = 64
-text = "Play"
+texture_normal = ExtResource("2_253i4")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
 
-[node name="Settings" type="Button" parent="Main/Control"]
+[node name="Settings" type="TextureButton" parent="Main/Control"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_rcmfx")
-theme_override_font_sizes/font_size = 64
-text = "Settings"
+texture_normal = ExtResource("3_tcdhu")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Credits" type="Button" parent="Main/Control"]
+[node name="Credits" type="TextureButton" parent="Main/Control"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_rcmfx")
-theme_override_font_sizes/font_size = 64
-text = "Credits"
+texture_normal = ExtResource("4_36at8")
+ignore_texture_size = true
+stretch_mode = 5
 
-[node name="Exit" type="Button" parent="Main/Control"]
+[node name="Exit" type="TextureButton" parent="Main/Control"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("1_rcmfx")
-theme_override_font_sizes/font_size = 64
-text = "Exit"
+texture_normal = ExtResource("5_oj5ua")
+ignore_texture_size = true
+stretch_mode = 5
 
 [node name="Settings" type="TextureRect" parent="."]
 visible = false
@@ -202,3 +215,13 @@ size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("1_rcmfx")
 theme_override_font_sizes/font_size = 64
 text = "No"
+
+[connection signal="pressed" from="Main/Control/Play" to="." method="on_play_pressed"]
+[connection signal="pressed" from="Main/Control/Settings" to="." method="swap_catagory" binds= [1]]
+[connection signal="pressed" from="Main/Control/Credits" to="." method="swap_catagory" binds= [2]]
+[connection signal="pressed" from="Main/Control/Exit" to="." method="swap_catagory" binds= [3]]
+[connection signal="pressed" from="Settings/Control/Fullscreen" to="." method="on_fullscreen_pressed"]
+[connection signal="pressed" from="Settings/Control/Back" to="." method="swap_catagory" binds= [0]]
+[connection signal="pressed" from="Credits/Back" to="." method="swap_catagory" binds= [0]]
+[connection signal="pressed" from="ConfirmExit/Control/Yes" to="." method="on_yes_exit_pressed"]
+[connection signal="pressed" from="ConfirmExit/Control/No" to="." method="swap_catagory" binds= [0]]

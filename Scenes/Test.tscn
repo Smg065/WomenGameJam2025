@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d2rvucsxs8qe3"]
+[gd_scene load_steps=19 format=3 uid="uid://d2rvucsxs8qe3"]
 
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="1_be6qp"]
 [ext_resource type="Script" path="res://Scripts/Flashlight.gd" id="1_oolp0"]
@@ -7,9 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="3_e2cxc"]
 [ext_resource type="Material" uid="uid://b40eakpjivgbs" path="res://Modeling/Materials/Material.001.1001.tres" id="3_rkhp6"]
 [ext_resource type="Texture2D" uid="uid://cpig15chcpp7k" path="res://Modeling/Textures/floor/floor_cute_BaseColor_1001.png" id="4_gegtd"]
-[ext_resource type="ArrayMesh" uid="uid://dbevl2le8o3us" path="res://Modeling/Props/Register_table_cute/register_table_cute2_register_table_cute_geo.res" id="4_i2rry"]
-[ext_resource type="Texture2D" uid="uid://ce83vb8kf0mh8" path="res://Modeling/Props/Register_table_horror/register_table_horror_0.png" id="4_w6jk6"]
 [ext_resource type="Texture2D" uid="uid://n0k0g45k233b" path="res://Modeling/Textures/floor/floor_cute_Normal_1001.png" id="5_pkmj7"]
+[ext_resource type="PackedScene" uid="uid://ce44mmvg4j2d3" path="res://Modeling/Props/bread_shelfs/bread_shelfs_cute/shelf_base_cute.glb" id="9_5eedy"]
+[ext_resource type="PackedScene" uid="uid://imxoa0hntca3" path="res://Modeling/Props/bread_shelfs/bread_shelf_horror/shelf_base_horror.glb" id="10_v4egk"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_55f7v"]
 vertices = PackedVector3Array(-2.81418, 1.09814, -1.31418, -1.56418, 1.09814, -1.31418, -1.56418, 1.09814, -4.06418, -3.06418, 1.09814, -0.81418, 0.18582, 1.09814, -12.5642, -7.56418, 1.09814, -12.5642, -7.56418, 1.09814, -0.81418, 0.18582, 1.09814, -4.31418, 1.43582, 1.09814, -4.31418, 1.68582, 1.09814, -3.81418, 7.68582, 1.09814, -3.81418, 7.68582, 1.09814, -12.5642, 1.68582, 1.09814, -1.31418, -1.06418, 1.09814, -1.06418, -1.31418, 1.09814, 1.43582, -2.81418, 1.09814, 1.18582, -7.56418, 1.09814, 2.68582, 7.68582, 1.09814, 2.68582, -0.56418, 3.59814, -3.31418, -0.56418, 3.59814, -2.06418, 0.68582, 3.59814, -2.06418, 0.68582, 3.59814, -3.31418, -0.31418, 1.34814, -3.06418, -0.31418, 1.84814, -2.56418, 0.43582, 1.59814, -2.81418)
@@ -66,9 +66,6 @@ normal_texture = ExtResource("5_pkmj7")
 [sub_resource type="BoxShape3D" id="BoxShape3D_xye7u"]
 size = Vector3(15, 1, 15)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h6id0"]
-albedo_texture = ExtResource("4_w6jk6")
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i4lsq"]
 albedo_color = Color(0.57, 0.0513, 0.0513, 1)
 
@@ -100,19 +97,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_0uvtu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/floor/StaticBody3D"]
 shape = SubResource("BoxShape3D_xye7u")
-
-[node name="CSGMesh3D" type="CSGMesh3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-layers = 4
-calculate_tangents = false
-mesh = ExtResource("4_i2rry")
-material = SubResource("StandardMaterial3D_h6id0")
-
-[node name="CSGMesh3D2" type="CSGMesh3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-layers = 2
-calculate_tangents = false
-mesh = ExtResource("4_i2rry")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.906, -2.69373)
@@ -185,5 +169,12 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 player = NodePath("../CharacterBody3D")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+
+[node name="shelf_base_cute" parent="Node3D" instance=ExtResource("9_5eedy")]
+
+[node name="shelf_base_horror" parent="Node3D" instance=ExtResource("10_v4egk")]
 
 [editable path="NavigationRegion3D/floor"]
