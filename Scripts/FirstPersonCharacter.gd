@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+@export_category("Explore")
 @export var mainCamera : Camera3D
 @export var cuteCamera : Camera3D
 @export var mouseSensitivity : float = .005
@@ -11,14 +12,19 @@ var cuteCSG : CSGCombiner3D
 @export var lightLength : float = 9
 @export var flashlightOn : bool
 @export var charge : float = 60
-
+@export var chargeBar : TextureProgressBar
 @export var interactCast : RayCast3D
-@export var talkingTo : NPC
 
+@export_category("VN")
+@export var talkingTo : NPC
+@export var talkingUi : TalkingUi
+
+@export_category("Misc")
 @export var wanderUI : Control
 @export var convoUI : Control
 
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	for eachNode in get_tree().get_nodes_in_group("Flashlight"):
 		cuteLightVis.append(eachNode.get_path())
 	cuteCSG = get_tree().get_first_node_in_group("CuteCSG")
@@ -51,7 +57,17 @@ func controls_main(delta):
 	cast_interact()
 
 func controls_conversation():
-	return
+	if Input.is_action_just_pressed("Interact"):
+		var toLine : int = talkingUi.push_nextline()
+		#Stop talking
+		if toLine == -2:
+			talkingTo = null
+			set_talking_UI()
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+			return
+		if toLine == -1:
+			return
+		talkingUi.switch_line(talkingTo.dialogue.allLines[toLine])
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -85,6 +101,7 @@ func lose_charge(delta : float):
 	if !flashlightOn:
 		return
 	charge -= delta
+	chargeBar.value = charge
 	if charge <= 0:
 		toggle_flashlight()
 
@@ -105,6 +122,7 @@ func cast_interact():
 				canTalk = false
 		if canTalk:
 			talkingTo = interactCast.get_collider()
+			talkingUi.switch_line(talkingTo.dialogue.allLines[0])
 			set_talking_UI()
 		#Characters
 	if col.get_collision_layer_value(3):
