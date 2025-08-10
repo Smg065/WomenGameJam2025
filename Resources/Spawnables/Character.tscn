@@ -1,21 +1,55 @@
-[gd_scene load_steps=10 format=3 uid="uid://hlx74e2npk7b"]
+[gd_scene load_steps=24 format=3 uid="uid://hlx74e2npk7b"]
 
 [ext_resource type="Script" path="res://Scripts/FirstPersonCharacter.gd" id="1_xjw2c"]
 [ext_resource type="Texture2D" uid="uid://cvlhrbfkbafu1" path="res://Images/UI/LightMask.png" id="2_myl7v"]
-[ext_resource type="Texture2D" uid="uid://d4kj1e35b7i0e" path="res://Images/icon.svg" id="3_21w6c"]
+[ext_resource type="Script" path="res://Scripts/TalkingUi.gd" id="2_vcfxm"]
+[ext_resource type="Script" path="res://Scripts/TalkingPrebuilts.gd" id="3_8w4le"]
 [ext_resource type="Texture2D" uid="uid://cp6bu2ogc54mw" path="res://Images/UI/lulu_textbox.png" id="4_nsk1l"]
+[ext_resource type="Texture2D" uid="uid://b45pvh1j0l8fd" path="res://Images/UI/textbox_clicker.png" id="5_6x45p"]
 [ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="5_s8j4s"]
 [ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="6_11540"]
+[ext_resource type="Texture2D" uid="uid://r8f0nq4nbfvk" path="res://Images/UI/wgj_textbox_4.png" id="6_ex02p"]
+[ext_resource type="Texture2D" uid="uid://naixiseyx3sr" path="res://Images/UI/wgj_textbox_clicker_3.png" id="7_aqju3"]
 [ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="7_k2ri7"]
+[ext_resource type="Texture2D" uid="uid://dibqtul54t8u4" path="res://Images/UI/wgj_textbox_2.png" id="8_m1yab"]
+[ext_resource type="Texture2D" uid="uid://bk2dm0ca2qqc5" path="res://Images/UI/wgj_textbox_clicker_2.png" id="9_ctqiq"]
+[ext_resource type="Texture2D" uid="uid://cwp56c7f8vl3s" path="res://Images/UI/wgj_textbox_3.png" id="10_efy4g"]
+[ext_resource type="Texture2D" uid="uid://dh30031i5pbrc" path="res://Images/UI/flashlight_empty.png" id="12_wshuw"]
+[ext_resource type="Texture2D" uid="uid://2ucri82dfj8w" path="res://Images/UI/flashlight_fill.png" id="13_ig73p"]
+[ext_resource type="Texture2D" uid="uid://tvc6afvy88g8" path="res://Images/UI/flashlight.png" id="14_k0iml"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
+
+[sub_resource type="Resource" id="Resource_ws5ao"]
+script = ExtResource("3_8w4le")
+textColor = Color(0.392157, 0.0431373, 0.137255, 1)
+textBackdrop = ExtResource("4_nsk1l")
+ticker = ExtResource("5_6x45p")
+
+[sub_resource type="Resource" id="Resource_6rxd0"]
+script = ExtResource("3_8w4le")
+textColor = Color(1, 1, 1, 1)
+textBackdrop = ExtResource("6_ex02p")
+ticker = ExtResource("7_aqju3")
+
+[sub_resource type="Resource" id="Resource_gmhhg"]
+script = ExtResource("3_8w4le")
+textColor = Color(0.435294, 0.145098, 0.403922, 1)
+textBackdrop = ExtResource("8_m1yab")
+ticker = ExtResource("9_ctqiq")
+
+[sub_resource type="Resource" id="Resource_koq4d"]
+script = ExtResource("3_8w4le")
+textColor = Color(1, 1, 1, 1)
+textBackdrop = ExtResource("10_efy4g")
+ticker = ExtResource("7_aqju3")
 
 [sub_resource type="LabelSettings" id="LabelSettings_ncfar"]
 font = ExtResource("5_s8j4s")
 font_size = 48
 font_color = Color(0.392157, 0.0431373, 0.137255, 1)
 
-[node name="CharacterBody" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera", "cuteCamera", "interactCast", "wanderUI", "convoUI") groups=["Player"]]
+[node name="CharacterBody" type="CharacterBody3D" node_paths=PackedStringArray("mainCamera", "cuteCamera", "chargeBar", "interactCast", "talkingUi", "wanderUI", "convoUI") groups=["Player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 collision_layer = 2
 collision_mask = 3
@@ -23,7 +57,9 @@ script = ExtResource("1_xjw2c")
 mainCamera = NodePath("CharacterHitbox/RealCamera")
 cuteCamera = NodePath("PlayerUI/CutoutMask/SubViewportContainer/SubViewport/CuteCamera")
 cuteLightVis = Array[NodePath]([NodePath("PlayerUI/CutoutMask"), NodePath("CharacterHitbox/RealCamera/Cutelight"), NodePath("PlayerUI/CutoutMask/SubViewportContainer"), NodePath("PlayerUI/CutoutMask/SubViewportContainer/SubViewport/CuteCamera")])
+chargeBar = NodePath("PlayerUI/WanderUI/Battery")
 interactCast = NodePath("CharacterHitbox/RealCamera/InteractCast")
+talkingUi = NodePath("PlayerUI")
 wanderUI = NodePath("PlayerUI/WanderUI")
 convoUI = NodePath("PlayerUI/NVUI")
 
@@ -44,13 +80,19 @@ spot_attenuation = -0.25
 target_position = Vector3(0, 0, -2.5)
 collision_mask = 6
 
-[node name="PlayerUI" type="Control" parent="."]
+[node name="PlayerUI" type="Control" parent="." node_paths=PackedStringArray("text", "dialogeBox", "imageLeft", "imageRight")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("2_vcfxm")
+characterStyles = Array[ExtResource("3_8w4le")]([SubResource("Resource_ws5ao"), SubResource("Resource_6rxd0"), SubResource("Resource_gmhhg"), SubResource("Resource_koq4d")])
+text = NodePath("NVUI/DialogeBox/Text")
+dialogeBox = NodePath("NVUI/DialogeBox")
+imageLeft = NodePath("NVUI/CharLeft")
+imageRight = NodePath("NVUI/CharRight")
 metadata/_edit_use_anchors_ = true
 
 [node name="CutoutMask" type="TextureRect" parent="PlayerUI"]
@@ -93,16 +135,32 @@ metadata/_edit_use_anchors_ = true
 [node name="Battery" type="TextureProgressBar" parent="PlayerUI/WanderUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.706
+anchor_left = 0.760688
 anchor_top = 0.846278
-anchor_right = 1.0
+anchor_right = 0.902344
 anchor_bottom = 1.0
 offset_left = 0.319946
 offset_top = -0.320007
+max_value = 60.0
+value = 60.0
+fill_mode = 1
 nine_patch_stretch = true
-texture_under = ExtResource("3_21w6c")
-texture_over = ExtResource("3_21w6c")
-texture_progress = ExtResource("3_21w6c")
+texture_under = ExtResource("12_wshuw")
+texture_progress = ExtResource("13_ig73p")
+metadata/_edit_use_anchors_ = true
+
+[node name="Flashlight" type="TextureRect" parent="PlayerUI/WanderUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.897656
+anchor_top = 0.845833
+anchor_right = 1.00019
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("14_k0iml")
+expand_mode = 3
+stretch_mode = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="NVUI" type="Control" parent="PlayerUI"]
@@ -127,7 +185,7 @@ expand_mode = 3
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="PlayerUI/NVUI/DialogeBox"]
+[node name="Text" type="Label" parent="PlayerUI/NVUI/DialogeBox"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.2875
@@ -139,7 +197,7 @@ label_settings = SubResource("LabelSettings_ncfar")
 autowrap_mode = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect" type="TextureRect" parent="PlayerUI/NVUI"]
+[node name="CharLeft" type="TextureRect" parent="PlayerUI/NVUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.409722
@@ -152,7 +210,7 @@ expand_mode = 5
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="PlayerUI/NVUI"]
+[node name="CharRight" type="TextureRect" parent="PlayerUI/NVUI"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.794531

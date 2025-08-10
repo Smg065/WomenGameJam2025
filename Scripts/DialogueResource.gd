@@ -1,7 +1,7 @@
 extends Resource
 class_name DialogueEvent
 
-enum CharacterSpeaking {LULU, DONUT}
+enum CharacterSpeaking {LULU, DONUT, GOOB, VOICES}
 
 @export var mainLine : DialogueLine
 @export var character : CharacterSpeaking
