@@ -1,0 +1,74 @@
+[gd_resource type="Resource" script_class="Dialogue" load_steps=14 format=3 uid="uid://c2jg5u001ol3x"]
+
+[ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_ldbxm"]
+[ext_resource type="Script" path="res://Scripts/LineResource.gd" id="2_fh61m"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="2_o5hda"]
+
+[sub_resource type="Resource" id="Resource_6akrm"]
+script = ExtResource("2_fh61m")
+textEn = "I missed you."
+textEs = "Te extrañe."
+nextLineIndex = 1
+exitDialogue = false
+
+[sub_resource type="Resource" id="Resource_dgiqs"]
+script = ExtResource("1_ldbxm")
+mainLine = SubResource("Resource_6akrm")
+character = 1
+optionsLines = Array[ExtResource("2_fh61m")]([])
+
+[sub_resource type="Resource" id="Resource_d7a2v"]
+script = ExtResource("2_fh61m")
+textEn = "I don't care, stop scaring Goob every time I leave"
+textEs = "No me importa, deja de asustar a Goob cada vez que me voy"
+nextLineIndex = 0
+exitDialogue = false
+
+[sub_resource type="Resource" id="Resource_ukvmu"]
+script = ExtResource("1_ldbxm")
+mainLine = SubResource("Resource_d7a2v")
+character = 0
+optionsLines = Array[ExtResource("2_fh61m")]([])
+
+[sub_resource type="Resource" id="Resource_si8q2"]
+script = ExtResource("2_fh61m")
+textEn = "You're no fun......"
+textEs = "No sabes divertirte....."
+nextLineIndex = 0
+exitDialogue = false
+
+[sub_resource type="Resource" id="Resource_fvlp6"]
+script = ExtResource("1_ldbxm")
+mainLine = SubResource("Resource_si8q2")
+character = 1
+optionsLines = Array[ExtResource("2_fh61m")]([])
+
+[sub_resource type="Resource" id="Resource_ek3yl"]
+script = ExtResource("2_fh61m")
+textEn = "Now go back to the fridge with the rest."
+textEs = "Ahora volve a la heladera con el resto."
+nextLineIndex = 0
+exitDialogue = false
+
+[sub_resource type="Resource" id="Resource_rhai4"]
+script = ExtResource("1_ldbxm")
+mainLine = SubResource("Resource_ek3yl")
+character = 0
+optionsLines = Array[ExtResource("2_fh61m")]([])
+
+[sub_resource type="Resource" id="Resource_l008s"]
+script = ExtResource("2_fh61m")
+textEn = "Okay, okay, don't yell at me...."
+textEs = "Okay, okay, no me grites......"
+nextLineIndex = 0
+exitDialogue = true
+
+[sub_resource type="Resource" id="Resource_v71i1"]
+script = ExtResource("1_ldbxm")
+mainLine = SubResource("Resource_l008s")
+character = 1
+optionsLines = Array[ExtResource("2_fh61m")]([])
+
+[resource]
+script = ExtResource("2_o5hda")
+allLines = Array[ExtResource("1_ldbxm")]([SubResource("Resource_dgiqs"), SubResource("Resource_ukvmu"), SubResource("Resource_fvlp6"), SubResource("Resource_rhai4"), SubResource("Resource_v71i1")])
