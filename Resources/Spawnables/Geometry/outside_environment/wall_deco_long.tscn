@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://6e8rsdmoet1w"]
+
+[ext_resource type="PackedScene" uid="uid://bqpxiklt7i4w2" path="res://Modeling/Props/Outside_envir/outside_horror/wall_deco_long_horror.glb" id="1_syk60"]
+[ext_resource type="PackedScene" uid="uid://d0ccli84ce3uw" path="res://Modeling/Props/Outside_envir/outside_cute/wall_deco_long.glb" id="2_txe8g"]
+
+[node name="WallDecoLong" type="Node3D"]
+
+[node name="wall_deco_long_horror" parent="." instance=ExtResource("1_syk60")]
+
+[node name="wall_deco_long" parent="." instance=ExtResource("2_txe8g")]

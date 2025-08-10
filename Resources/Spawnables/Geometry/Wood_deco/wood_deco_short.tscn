@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://3cvlnnmyxjfs"]
+
+[ext_resource type="PackedScene" uid="uid://bjxtpjlwetev8" path="res://Modeling/Props/Wood_deco/wood_deco1_cute.glb" id="1_u11gm"]
+[ext_resource type="PackedScene" uid="uid://dng1jcynhllfs" path="res://Modeling/Props/Wood_deco/wood_deco1_horror.glb" id="2_lpg14"]
+
+[node name="WoodDecoShort" type="Node3D"]
+
+[node name="wood_deco1_cute" parent="." instance=ExtResource("1_u11gm")]
+
+[node name="wood_deco1_horror" parent="." instance=ExtResource("2_lpg14")]

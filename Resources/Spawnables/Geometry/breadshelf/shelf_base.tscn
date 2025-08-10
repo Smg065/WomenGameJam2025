@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvyq3vxujmb36"]
+
+[ext_resource type="PackedScene" uid="uid://ce44mmvg4j2d3" path="res://Modeling/Props/bread_shelfs/bread_shelfs_cute/shelf_base_cute.glb" id="1_qvxsr"]
+[ext_resource type="PackedScene" uid="uid://imxoa0hntca3" path="res://Modeling/Props/bread_shelfs/bread_shelf_horror/shelf_base_horror.glb" id="2_o6nj1"]
+
+[node name="ShelfBase" type="Node3D"]
+
+[node name="shelf_base_cute" parent="." instance=ExtResource("1_qvxsr")]
+
+[node name="shelf_base_horror" parent="." instance=ExtResource("2_o6nj1")]

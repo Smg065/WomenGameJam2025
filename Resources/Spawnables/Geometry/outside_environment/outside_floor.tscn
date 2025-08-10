@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv1h27mb6j2ii"]
+
+[ext_resource type="PackedScene" uid="uid://yx7c4vet570a" path="res://Modeling/Props/Outside_envir/outside_cute/outside_floor_cute.glb" id="1_q0r5n"]
+[ext_resource type="PackedScene" uid="uid://diawrq3gikh02" path="res://Modeling/Props/Outside_envir/outside_horror/outsideFloor_horror.glb" id="2_itbyt"]
+
+[node name="OutsideFloor" type="Node3D"]
+
+[node name="outside_floor_cute" parent="." instance=ExtResource("1_q0r5n")]
+
+[node name="outsideFloor_horror" parent="." instance=ExtResource("2_itbyt")]

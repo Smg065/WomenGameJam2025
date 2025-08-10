@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://k0tfae6balqe"]
+
+[ext_resource type="PackedScene" uid="uid://bbk8wkoruh5l5" path="res://Modeling/Props/tablewares/plate_cute.glb" id="1_xciir"]
+[ext_resource type="PackedScene" uid="uid://8j4irxnuiqc2" path="res://Modeling/Props/tablewares/plate_horror.glb" id="2_sjveu"]
+
+[node name="Plate" type="Node3D"]
+
+[node name="plate_cute" parent="." instance=ExtResource("1_xciir")]
+
+[node name="plate_horror" parent="." instance=ExtResource("2_sjveu")]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2cspr2cqru8w"]
+
+[ext_resource type="PackedScene" uid="uid://cu0e6s2eaig5y" path="res://Modeling/Props/table_and_chair/table_cute.glb" id="1_3vm12"]
+[ext_resource type="PackedScene" uid="uid://d3aaqbawde2b4" path="res://Modeling/Props/table_and_chair/table_horror.glb" id="2_lmhg7"]
+
+[node name="Table" type="Node3D"]
+
+[node name="table_cute" parent="." instance=ExtResource("1_3vm12")]
+
+[node name="table_horror" parent="." instance=ExtResource("2_lmhg7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00074029, -5.96046e-08, -0.00284219)

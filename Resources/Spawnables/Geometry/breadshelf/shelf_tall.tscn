@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ypinosoa8ur6"]
+
+[ext_resource type="PackedScene" uid="uid://c5wnnoiwhyej3" path="res://Modeling/Props/bread_shelfs/bread_shelfs_cute/shelf_tall_cute.glb" id="1_w4vmu"]
+[ext_resource type="PackedScene" uid="uid://bpr4n5v6k31od" path="res://Modeling/Props/bread_shelfs/bread_shelf_horror/shelf_tall_horror.glb" id="2_kgewf"]
+
+[node name="ShelfHorror" type="Node3D"]
+
+[node name="shelf_tall_cute" parent="." instance=ExtResource("1_w4vmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.747595, 0)
+
+[node name="shelf_tall_horror" parent="." instance=ExtResource("2_kgewf")]

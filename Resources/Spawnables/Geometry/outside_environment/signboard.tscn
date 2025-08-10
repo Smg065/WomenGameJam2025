@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccushdwpvwdr3"]
+
+[ext_resource type="PackedScene" uid="uid://coagj3utws5f0" path="res://Modeling/Props/Outside_envir/outside_cute/signboard.glb" id="1_mlrm5"]
+[ext_resource type="PackedScene" uid="uid://cne6knhn5u01e" path="res://Modeling/Props/Outside_envir/outside_horror/signboard_horror.glb" id="2_x4ka5"]
+
+[node name="Signboard" type="Node3D"]
+
+[node name="signboard" parent="." instance=ExtResource("1_mlrm5")]
+
+[node name="signboard_horror" parent="." instance=ExtResource("2_x4ka5")]
