@@ -1,5 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dn8dpi3qvw8kn"]
+[gd_scene load_steps=3 format=3 uid="uid://dn8dpi3qvw8kn"]
 
 [ext_resource type="PackedScene" uid="uid://djt7xw3pukif3" path="res://Resources/Spawnables/NPC.tscn" id="1_5yk6l"]
+[ext_resource type="PackedScene" uid="uid://dwdds7c4twc0f" path="res://Modeling/Characters/Animations/Donut_Bad_Idle_V01.fbx" id="2_umdrc"]
 
-[node name="NPC" instance=ExtResource("1_5yk6l")]
+[node name="Donut" instance=ExtResource("1_5yk6l")]
+gravity_scale = 0.0
+
+[node name="Donut_Bad_Idle_V01" parent="." index="5" instance=ExtResource("2_umdrc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)

@@ -22,7 +22,14 @@ func switch_line(newLine : DialogueEvent) -> void:
 	var charStyle : TalkingCharInfo = characterStyles[currentLine.character]
 	dialogeBox.texture = charStyle.textBackdrop
 	text.label_settings.font_color = charStyle.textColor
-	text.text = currentLine.mainLine.textEn
+	
+	#Set based off language
+	match SaveData.language:
+		Save.Language.ENGLISH:
+			text.text = currentLine.mainLine.textEn
+		Save.Language.SPANISH:
+			text.text = currentLine.mainLine.textEs
+	
 	text.visible_ratio = 0
 	imageLeft.texture = currentLine.characterSprite
 	imageRight.texture = currentLine.reactionSprite
