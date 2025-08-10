@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://jwhkd7wsiqm5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_72ctw"]
+albedo_color = Color(1, 0.654902, 1, 1)
+roughness = 0.35
+
+[sub_resource type="BoxMesh" id="BoxMesh_sn5m4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sxfbl"]
+albedo_color = Color(0.0909091, 0.135879, 0.0943718, 1)
+
+[node name="Windows" type="Node3D"]
+
+[node name="window_cute" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.710768, 0, 0, 0, 1, 0, 0, 0, -0.027181, 0, 0.51012, -0.00711784)
+layers = 2
+material_override = SubResource("StandardMaterial3D_72ctw")
+transparency = 0.71
+mesh = SubResource("BoxMesh_sn5m4")
+
+[node name="window_horror" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.710768, 0, 0, 0, 1, 0, 0, 0, -0.027181, 0, 0.51012, 0)
+layers = 4
+material_override = SubResource("StandardMaterial3D_sxfbl")
+transparency = 0.74
+mesh = SubResource("BoxMesh_sn5m4")
