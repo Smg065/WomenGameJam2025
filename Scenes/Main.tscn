@@ -1,18 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://bq2qsqan3p3h3"]
+[gd_scene load_steps=6 format=3 uid="uid://bq2qsqan3p3h3"]
 
 [ext_resource type="PackedScene" uid="uid://y8rua0xie7b8" path="res://Scenes/MainEnviroment.tscn" id="1_b2rtm"]
 [ext_resource type="PackedScene" uid="uid://hlx74e2npk7b" path="res://Resources/Spawnables/Character.tscn" id="2_y7blu"]
 [ext_resource type="PackedScene" uid="uid://clju01ad7pyl3" path="res://Resources/Spawnables/Goob.tscn" id="3_h6ov6"]
+[ext_resource type="AudioStream" uid="uid://vni3s3hwqqsc" path="res://Audio/Music/Horror/HorrorAmbientSound.wav" id="4_4j6ew"]
+[ext_resource type="Script" path="res://Scripts/FlatSound.gd" id="5_oioi7"]
 
 [node name="Main" type="Node3D"]
 
 [node name="MainEnviroment" parent="." instance=ExtResource("1_b2rtm")]
 
-[node name="CuteCSG" parent="MainEnviroment" index="0" groups=["CuteCSG"]]
-
 [node name="CharacterBody" parent="." instance=ExtResource("2_y7blu")]
 
 [node name="NPC" parent="." instance=ExtResource("3_h6ov6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -3)
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4j6ew")
+autoplay = true
+script = ExtResource("5_oioi7")
 
 [editable path="MainEnviroment"]

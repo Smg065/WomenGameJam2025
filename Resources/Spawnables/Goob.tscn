@@ -17,6 +17,7 @@ shader_parameter/uv1_offset = null
 shader_parameter/texture_albedo = ExtResource("3_dvqy6")
 
 [node name="Goob" instance=ExtResource("1_54ffm")]
+gravity_scale = 0.0
 isHostile = false
 
 [node name="Cute" parent="." index="1"]
