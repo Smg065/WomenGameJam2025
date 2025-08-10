@@ -7,8 +7,8 @@
 [ext_resource type="Material" uid="uid://b40eakpjivgbs" path="res://Modeling/Materials/Material.001.1001.tres" id="3_rkhp6"]
 [ext_resource type="Texture2D" uid="uid://cpig15chcpp7k" path="res://Modeling/Textures/floor/floor_cute_BaseColor_1001.png" id="4_gegtd"]
 [ext_resource type="Texture2D" uid="uid://n0k0g45k233b" path="res://Modeling/Textures/floor/floor_cute_Normal_1001.png" id="5_pkmj7"]
+[ext_resource type="AudioStream" uid="uid://304opmtx7trj" path="res://Audio/SFX/CuteSound(3).wav" id="9_2hs14"]
 [ext_resource type="Script" path="res://Scripts/MultitrackSound.gd" id="9_77o5p"]
-[ext_resource type="AudioStream" uid="uid://5urpo3k1huoj" path="res://Audio/SFX/CuteSound(2).wav" id="10_5empu"]
 [ext_resource type="AudioStream" uid="uid://fekqdthefrho" path="res://Audio/SFX/MonsterSound(1).wav" id="11_i4pp1"]
 [ext_resource type="PackedScene" uid="uid://dn8dpi3qvw8kn" path="res://Resources/Spawnables/Donut.tscn" id="12_fe6lf"]
 [ext_resource type="Script" path="res://Scripts/AudioPair.gd" id="12_h8n1e"]
@@ -76,7 +76,7 @@ albedo_color = Color(1, 0.627451, 1, 1)
 
 [sub_resource type="Resource" id="Resource_cyoda"]
 script = ExtResource("12_h8n1e")
-cuteSound = ExtResource("10_5empu")
+cuteSound = ExtResource("9_2hs14")
 horrorSound = ExtResource("11_i4pp1")
 
 [node name="Node3D" type="Node3D"]

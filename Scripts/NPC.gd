@@ -13,6 +13,11 @@ class_name NPC
 @export var dialogue : Dialogue
 
 @export var isHostile : bool = true
+@export var enemySounds : Array[AudioPair]
+
+@export var curWanderPoint : Vector3
+
+@export var allWanderPoints : Array[Node3D]
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
@@ -25,7 +30,9 @@ func _physics_process(delta: float) -> void:
 
 func movement(delta):
 	#Wander Logic
-	
+	if allWanderPoints.size() > 0:
+		wander_logic(delta)
+		
 	if !isHostile:
 		return
 	#Chase Logic
@@ -58,8 +65,21 @@ func ray_is_blocked(in_ray : RayCast3D) -> bool:
 	in_ray.target_position = in_ray.target_position.normalized() * clamp(in_ray.target_position.length(), 0, player.lightLength)
 	return in_ray.is_colliding()
 
+func wander_logic(delta: float):
+	navInfo.target_position = curWanderPoint
+	move_along_path(delta)
+	var distance_left = navInfo.target_position.distance_to(global_position)
+	if distance_left < 1:
+		curWanderPoint = allWanderPoints.pick_random().global_position
+
 func chase_logic(delta: float) -> void:
 	navInfo.target_position = player.global_position
+	move_along_path(delta)
+	var distance_left = navInfo.target_position.distance_to(global_position)
+	if distance_left < 1:
+		game_over()
+
+func move_along_path(delta: float):
 	navInfo.get_next_path_position()
 	var pathNodes : PackedVector3Array = navInfo.get_current_navigation_path()
 	var distToTravel = delta * speed
@@ -70,10 +90,15 @@ func chase_logic(delta: float) -> void:
 			position += offset
 			break
 		distToTravel -= distThisPath
-	var distance_left = navInfo.target_position.distance_to(global_position)
-	if distance_left < 1:
-		game_over()
 
 func game_over():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://Scenes/GameOver.tscn")
+
+
+func noise_timeout() -> void:
+	var toUse : AudioPair = enemySounds.pick_random()
+	var newSound = MultitrackSound.new()
+	newSound.audioPair = toUse
+	newSound.max_distance = 10
+	add_child(newSound)

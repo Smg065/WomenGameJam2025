@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="AudioPair" load_steps=4 format=3 uid="uid://dpuoo64yudv58"]
+
+[ext_resource type="AudioStream" uid="uid://304opmtx7trj" path="res://Audio/SFX/CuteSound(3).wav" id="1_bxjtp"]
+[ext_resource type="Script" path="res://Scripts/AudioPair.gd" id="1_y7pak"]
+[ext_resource type="AudioStream" uid="uid://fekqdthefrho" path="res://Audio/SFX/MonsterSound(1).wav" id="2_pfnbk"]
+
+[resource]
+script = ExtResource("1_y7pak")
+cuteSound = ExtResource("1_bxjtp")
+horrorSound = ExtResource("2_pfnbk")
