@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkqe7dxvs02hb"
-path.s3tc="res://.godot/imported/Cake_A_Cakes_Base_color.png-e8643aa42a3ba6a50a6b6ad70fbddb50.s3tc.ctex"
+uid="uid://dre71dhel1rfo"
+path.s3tc="res://.godot/imported/Cakes_Normal_OpenGL.png-1382f294d901b8ec55ba204f9ddd0c22.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "a10f0508c82a7ebc5738844525e5ee87"
-}
 
 [deps]
 
-source_file="res://Modeling/Textures/Foods/Cake_A_Cakes_Base_color.png"
-dest_files=["res://.godot/imported/Cake_A_Cakes_Base_color.png-e8643aa42a3ba6a50a6b6ad70fbddb50.s3tc.ctex"]
+source_file="res://Modeling/Textures/Foods/Cute Cakes and coffee/Cakes_Normal_OpenGL.png"
+dest_files=["res://.godot/imported/Cakes_Normal_OpenGL.png-1382f294d901b8ec55ba204f9ddd0c22.s3tc.ctex"]
 
 [params]
 
@@ -23,12 +20,12 @@ compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=1
+roughness/src_normal="res://Modeling/Textures/Foods/Cute Cakes and coffee/Cakes_Normal_OpenGL.png"
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
