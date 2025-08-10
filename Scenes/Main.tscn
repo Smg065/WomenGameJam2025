@@ -25,5 +25,3 @@ axis_lock_angular_z = false
 stream = ExtResource("4_4j6ew")
 autoplay = true
 script = ExtResource("5_oioi7")
-
-[editable path="MainEnviroment"]

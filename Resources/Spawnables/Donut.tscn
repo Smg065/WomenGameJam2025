@@ -8,3 +8,4 @@ gravity_scale = 0.0
 
 [node name="Donut_Bad_Idle_V01" parent="." index="5" instance=ExtResource("2_umdrc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false

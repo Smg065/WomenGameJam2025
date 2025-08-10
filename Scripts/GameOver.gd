@@ -2,7 +2,7 @@ extends ColorRect
 class_name GameOver
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	$Label.modulate = lerp(Color.TRANSPARENT, Color.WHITE, time_remaining())
 	$FlatSound.volume_db = linear_to_db(SaveData.volume * time_remaining())
 

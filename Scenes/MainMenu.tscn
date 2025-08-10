@@ -1,25 +1,23 @@
 [gd_scene load_steps=21 format=3 uid="uid://xh4n5233txfb"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_m3v1k"]
-[ext_resource type="FontFile" uid="uid://cx6ssflt2u7nb" path="res://Fonts/Perfect DOS VGA 437 Win.ttf" id="1_rcmfx"]
 [ext_resource type="Texture2D" uid="uid://dq4igc4jtsoju" path="res://Images/UI/wgj_start.png" id="2_253i4"]
 [ext_resource type="Texture2D" uid="uid://whsu1mhhno26" path="res://Images/UI/Title.png" id="2_qxhlg"]
 [ext_resource type="Texture2D" uid="uid://d1lot5iu631iv" path="res://Images/UI/title_cf.png" id="2_w6exo"]
 [ext_resource type="Texture2D" uid="uid://bhadgxnedr2ql" path="res://Images/UI/wgj_settings.png" id="3_tcdhu"]
 [ext_resource type="Texture2D" uid="uid://dmw0ok47bwemp" path="res://Images/UI/wgj_credits.png" id="4_36at8"]
 [ext_resource type="Texture2D" uid="uid://cdt2noe3wuro7" path="res://Images/UI/wgj_exit.png" id="5_oj5ua"]
+[ext_resource type="Texture2D" uid="uid://coto575ag66ni" path="res://Images/UI/mouse_sens.png" id="8_68klx"]
 [ext_resource type="Texture2D" uid="uid://bq1q66dhjylaq" path="res://Images/UI/CookieHeartMini.png" id="9_17x65"]
 [ext_resource type="Texture2D" uid="uid://c2i2y7r3q0u1n" path="res://Images/UI/wgj_yes.png" id="9_e3l2p"]
 [ext_resource type="Texture2D" uid="uid://cl8tiqplkxqs3" path="res://Images/UI/wgj_no.png" id="10_ss85t"]
 [ext_resource type="Texture2D" uid="uid://bsmmp4hdepb7i" path="res://Images/UI/bar_empty.png" id="10_yo11e"]
 [ext_resource type="Texture2D" uid="uid://bdhdw7vrc0qih" path="res://Images/UI/bar_full.png" id="11_4jqoy"]
 [ext_resource type="AudioStream" uid="uid://dd30v4wwh5m87" path="res://Audio/Music/Cute/MainMenuSong.wav" id="11_6fidc"]
+[ext_resource type="Texture2D" uid="uid://dw2kdqt1ng7dh" path="res://Images/UI/VOLUME.png" id="12_a84p5"]
 [ext_resource type="Texture2D" uid="uid://cqttmf5rm1woa" path="res://Images/UI/wgj_fullscreen.png" id="12_y75t4"]
 [ext_resource type="Texture2D" uid="uid://due7qu8uxlluo" path="res://Images/UI/wgj_back.png" id="13_qvoqq"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_5ymtl"]
-font = ExtResource("1_rcmfx")
-font_size = 64
+[ext_resource type="Texture2D" uid="uid://bioqc00y38mxj" path="res://Images/UI/credits.png" id="14_siudj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lcsb0"]
 texture = ExtResource("10_yo11e")
@@ -30,10 +28,6 @@ expand_margin_bottom = 10.0
 texture = ExtResource("11_4jqoy")
 expand_margin_top = 10.0
 expand_margin_bottom = 10.0
-
-[sub_resource type="LabelSettings" id="LabelSettings_yxst4"]
-font = ExtResource("1_rcmfx")
-font_size = 64
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("allCatagories")]
 layout_mode = 3
@@ -121,38 +115,76 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.249219
-anchor_top = 0.5
+anchor_top = 0.269444
 anchor_right = 0.752344
-anchor_bottom = 0.916667
+anchor_bottom = 0.933333
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="MouseSensitivity" type="Label" parent="Settings/Control"]
-layout_mode = 2
-text = "Mouse Sensitivity"
-label_settings = SubResource("LabelSettings_5ymtl")
-horizontal_alignment = 1
-
-[node name="MouseSlider" type="HSlider" parent="Settings/Control"]
+[node name="Control" type="Control" parent="Settings/Control"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="MouseSensitivity" type="TextureRect" parent="Settings/Control/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 99.6728
+grow_horizontal = 2
+size_flags_vertical = 3
+texture = ExtResource("8_68klx")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="MouseSlider" type="HSlider" parent="Settings/Control/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -27.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
 theme_override_icons/grabber = ExtResource("9_17x65")
+theme_override_icons/grabber_highlight = ExtResource("9_17x65")
 theme_override_styles/slider = SubResource("StyleBoxTexture_lcsb0")
 theme_override_styles/grabber_area = SubResource("StyleBoxTexture_l4jxx")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_l4jxx")
 min_value = 0.001
 max_value = 0.01
 step = 0.0
 value = 0.005
 
-[node name="Volume" type="Label" parent="Settings/Control"]
+[node name="Control2" type="Control" parent="Settings/Control"]
 layout_mode = 2
-text = "Volume"
-label_settings = SubResource("LabelSettings_5ymtl")
-horizontal_alignment = 1
+size_flags_vertical = 3
 
-[node name="VolumeSlider" type="HSlider" parent="Settings/Control"]
-layout_mode = 2
+[node name="Volume" type="TextureRect" parent="Settings/Control/Control2"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 76.0
+grow_horizontal = 2
+texture = ExtResource("12_a84p5")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="VolumeSlider" type="HSlider" parent="Settings/Control/Control2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_icons/grabber = ExtResource("9_17x65")
+theme_override_icons/grabber_highlight = ExtResource("9_17x65")
+theme_override_styles/slider = SubResource("StyleBoxTexture_lcsb0")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_l4jxx")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_l4jxx")
 max_value = 1.0
 step = 0.0
 value = 1.0
@@ -186,9 +218,9 @@ expand_mode = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.249219
-anchor_top = 0.816667
+anchor_top = 0.776389
 anchor_right = 0.752344
-anchor_bottom = 0.916667
+anchor_bottom = 0.961111
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 3
@@ -197,25 +229,17 @@ ignore_texture_size = true
 stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
-[node name="RichTextLabel" type="Label" parent="Credits"]
+[node name="TextureRect" type="TextureRect" parent="Credits"]
 layout_mode = 1
 anchors_preset = -1
-anchor_top = 0.0666667
-anchor_right = 1.0
-anchor_bottom = 0.713389
-offset_bottom = 0.359985
-grow_horizontal = 2
-grow_vertical = 2
-text = "Smg
-Cherrybones
-Florayiduo
-Larissa Paes
-Mila
-Meg
-Lulovera"
-label_settings = SubResource("LabelSettings_yxst4")
-horizontal_alignment = 1
-autowrap_mode = 1
+anchor_top = 0.0416667
+anchor_right = 0.99975
+anchor_bottom = 0.754611
+offset_right = 0.32
+offset_bottom = -0.32
+texture = ExtResource("14_siudj")
+expand_mode = 1
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="ConfirmExit" type="TextureRect" parent="."]
@@ -262,8 +286,8 @@ autoplay = true
 [connection signal="pressed" from="Main/Control/Settings" to="." method="swap_catagory" binds= [1]]
 [connection signal="pressed" from="Main/Control/Credits" to="." method="swap_catagory" binds= [2]]
 [connection signal="pressed" from="Main/Control/Exit" to="." method="swap_catagory" binds= [3]]
-[connection signal="value_changed" from="Settings/Control/MouseSlider" to="." method="on_mouse_slider_value_changed"]
-[connection signal="value_changed" from="Settings/Control/VolumeSlider" to="." method="on_volume_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Control/Control/MouseSlider" to="." method="on_mouse_slider_value_changed"]
+[connection signal="value_changed" from="Settings/Control/Control2/VolumeSlider" to="." method="on_volume_slider_value_changed"]
 [connection signal="pressed" from="Settings/Control/Fullscreen" to="." method="on_fullscreen_pressed"]
 [connection signal="pressed" from="Settings/Control/Back" to="." method="swap_catagory" binds= [0]]
 [connection signal="pressed" from="Credits/Back" to="." method="swap_catagory" binds= [0]]
