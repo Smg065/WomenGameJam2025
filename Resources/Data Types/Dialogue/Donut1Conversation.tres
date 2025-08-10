@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Dialogue" load_steps=3 format=3 uid="uid://7es7y1qp3wp5"]
 
-[ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_75ndm"]
-[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="2_5osln"]
+[ext_resource type="Script" path="res://Scripts/DialogueResource.gd" id="1_puyoo"]
+[ext_resource type="Script" path="res://Scripts/Dialogue.gd" id="2_cx2h2"]
 
 [resource]
-script = ExtResource("2_5osln")
-allLines = Array[ExtResource("1_75ndm")]([])
+script = ExtResource("2_cx2h2")
+allLines = Array[ExtResource("1_puyoo")]([])
