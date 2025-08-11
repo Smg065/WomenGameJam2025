@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://bf7wvbeclyo64" path="res://Images/Sprites/wgj_chara.png" id="6_11540"]
 [ext_resource type="Texture2D" uid="uid://r8f0nq4nbfvk" path="res://Images/UI/wgj_textbox_4.png" id="6_ex02p"]
 [ext_resource type="Texture2D" uid="uid://naixiseyx3sr" path="res://Images/UI/wgj_textbox_clicker_3.png" id="7_aqju3"]
-[ext_resource type="Texture2D" uid="uid://b8h22xwnukvoi" path="res://Images/Sprites/tempdonut.png" id="7_k2ri7"]
 [ext_resource type="Texture2D" uid="uid://dibqtul54t8u4" path="res://Images/UI/wgj_textbox_2.png" id="8_m1yab"]
 [ext_resource type="Texture2D" uid="uid://bk2dm0ca2qqc5" path="res://Images/UI/wgj_textbox_clicker_2.png" id="9_ctqiq"]
 [ext_resource type="Texture2D" uid="uid://cwp56c7f8vl3s" path="res://Images/UI/wgj_textbox_3.png" id="10_efy4g"]
 [ext_resource type="Texture2D" uid="uid://dh30031i5pbrc" path="res://Images/UI/flashlight_empty.png" id="12_wshuw"]
 [ext_resource type="Texture2D" uid="uid://2ucri82dfj8w" path="res://Images/UI/flashlight_fill.png" id="13_ig73p"]
 [ext_resource type="Texture2D" uid="uid://tvc6afvy88g8" path="res://Images/UI/flashlight.png" id="14_k0iml"]
+[ext_resource type="Texture2D" uid="uid://cs2hyxt0sjfo4" path="res://Images/Sprites/wgj_chara_2.png" id="16_8yelt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_afhwg"]
 
@@ -175,6 +175,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="CharLeft" type="TextureRect" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0679687
+anchor_top = 0.302778
+anchor_right = 0.322656
+anchor_bottom = 1.24444
+offset_top = -0.0662842
+offset_bottom = 0.0662842
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_11540")
+expand_mode = 5
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="CharRight" type="TextureRect" parent="PlayerUI/NVUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.675
+anchor_top = 0.243056
+anchor_right = 1.0875
+anchor_bottom = 1.37917
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("16_8yelt")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
 [node name="DialogeBox" type="TextureRect" parent="PlayerUI/NVUI"]
 layout_mode = 1
 anchors_preset = -1
@@ -198,33 +228,6 @@ anchor_bottom = 1.0
 text = "This is a test to see if text renders here!"
 label_settings = SubResource("LabelSettings_ncfar")
 autowrap_mode = 3
-metadata/_edit_use_anchors_ = true
-
-[node name="CharLeft" type="TextureRect" parent="PlayerUI/NVUI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.409722
-anchor_right = 0.203125
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("6_11540")
-expand_mode = 5
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="CharRight" type="TextureRect" parent="PlayerUI/NVUI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.794531
-anchor_top = 0.409722
-anchor_right = 0.997656
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_k2ri7")
-expand_mode = 5
-stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="Options" type="VBoxContainer" parent="PlayerUI/NVUI"]

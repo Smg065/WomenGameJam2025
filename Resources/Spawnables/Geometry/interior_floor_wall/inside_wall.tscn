@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3ybledrijy82"]
+[gd_scene load_steps=4 format=3 uid="uid://c3ybledrijy82"]
 
 [ext_resource type="PackedScene" uid="uid://c2be8swp6q60r" path="res://Modeling/Props/floor_and_wall/wall_cute.glb" id="1_lwh3o"]
 [ext_resource type="PackedScene" uid="uid://cjscu2wfcxwmg" path="res://Modeling/Props/floor_and_wall/wall_horror.glb" id="2_a80ga"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e415j"]
+size = Vector3(1.86609, 1.94147, 0.128418)
 
 [node name="InsideWall" type="Node3D"]
 
@@ -9,3 +12,9 @@
 
 [node name="wall_horror" parent="." instance=ExtResource("2_a80ga")]
 transform = Transform3D(0.432797, 0, 0, 0, 0.549587, 0, 0, 0, 0.55901, -0.143494, 0, -0.03389)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.10352e-05, 0.946381, -0.0305176)
+shape = SubResource("BoxShape3D_e415j")

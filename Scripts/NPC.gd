@@ -82,6 +82,8 @@ func chase_logic(delta: float) -> void:
 		game_over()
 
 func move_along_path(delta: float):
+	if !navInfo.get_navigation_map().is_valid():
+		return
 	navInfo.get_next_path_position()
 	var pathNodes : PackedVector3Array = navInfo.get_current_navigation_path()
 	var distToTravel = delta * speed
